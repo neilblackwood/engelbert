@@ -67,7 +67,7 @@
 .wpc-img img {
 	border-radius:0;
 	box-shadow: none;
-	height: 110%;
+	height: 100%;
 }
 .wpc-title {
 	color: #15845e;
@@ -114,7 +114,7 @@
 }
 .product-img-view {
 	float:left;
-	border:#dcdbdb 5px solid;
+	border: 0;
 	margin:0 14px 0 0;
 	overflow: hidden;
 }
@@ -133,6 +133,14 @@
 }
 #wpc-product-gallery {
 	padding: 0 0 20px;
+	float:left;
+}
+#wpc-product .post {
+    float:right;
+    width:300px;
+}
+#tabs {
+    height:141px;
 }
 .clear {
 	clear: both;

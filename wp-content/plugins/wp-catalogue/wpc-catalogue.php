@@ -134,7 +134,9 @@ function catalogue() {
 						<div id="wpc-products">';
 				while($products->have_posts()): $products->the_post();
 				$title		=	get_the_title(); 
-				$permalink	=	get_permalink(); 
+				$permalink	=	get_permalink();
+				$description=	get_post_meta(get_the_id(),'product_description',true);
+				$details    =	get_post_meta(get_the_id(),'product_details',true);
 				$img		=	get_post_meta(get_the_id(),'product_img1',true);
 				$price		=	get_post_meta(get_the_id(),'product_price',true); 
 				 $return_string .= '<!--wpc product-->';

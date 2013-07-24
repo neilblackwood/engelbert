@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <!--Content-->
 <?php echo get_option('inn_temp_head'); ?>	
 		<?php 
@@ -42,7 +41,7 @@
 		);
         $terms	=	get_terms('wpccategories',$args);
 		$count	=	count($terms);
-echo '<div id="wpc-col-1">
+/* echo '<div id="wpc-col-1">
         <ul class="wpc-categories">';
 		if($count>0){
 			echo '<li class="wpc-category"><a href="'. get_option('catalogue_page_url') .'">All Products</a></li>';
@@ -59,11 +58,13 @@ echo '<div id="wpc-col-1">
 		}
         echo '</ul>
         </div>';
+
+        */
 	?>
         <!--/Left-menu-->
         <!--col-2-->
 
-        <div id="wpc-col-2">
+        <div id="wpc-product">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <?php 
 			$img1		=	get_post_meta($post->ID,'product_img1',true);
@@ -75,21 +76,24 @@ echo '<div id="wpc-col-1">
 			if(get_option('image_height')){
 				$img_height	=	get_option('image_height');
 			}else{
-				$img_height	=	348;
+				$img_height	=	580;
 			}
 			if(get_option('image_width')){
 				$img_width	=	get_option('image_width'); 
 			}else{
-				$img_width	=	490;
+				$img_width	=	580;
 			}
 			$icroping	=	get_option('croping');
 		?>
         
         <div class="product-img-view" style="width:<?php echo $img_width; ?>px; height:<?php echo $img_height; ?>px;">
         <img src="<?php echo $img1; ?>" alt="" id="img1" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" />
-        <img src="<?php echo $img2; ?>" alt="" id="img2" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;" />
+        <?php /* <img src="<?php echo $img2; ?>" alt="" id="img2" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;" />
         <img src="<?php echo $img3; ?>" alt="" id="img3" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;"  />
+        */ ?>
         </div>
+
+        <?php /* ?>
         <div class="wpc-product-img">
         <?php if($img1): ?>
         <div class="new-prdct-img"><img src="<?php echo $img1; ?>" alt="" width="151" id="img1" /></div>
@@ -99,13 +103,28 @@ echo '<div id="wpc-col-1">
         <div class="new-prdct-img"><img src="<?php echo $img3; ?>" alt="" width="151" id="img3"/></div>
 		<?php endif; ?>
         </div>
+        <?php */ ?>
         <div class="clear"></div>
         </div>
+        <?php $product_description = get_post_meta($post->ID, 'product_description', true); ?>
+        <?php $product_details = get_post_meta($post->ID, 'product_details', true); ?>
         <?php $product_price = get_post_meta($post->ID, 'product_price', true); ?>
-        <h4>Product Details  <?php if($product_price): ?><span class="product-price">Price: <span><?php echo $product_price; ?></span></span><?php endif; ?></h4>
-<article class="post">
-		<div class="entry-content"> 
-			<?php the_content(); ?>
+        <?php if($product_price): ?><h4><span class="product-price">Price: <span><?php echo $product_price; ?></span></span></h4><?php endif; ?>
+    <article class="post">
+        <div id="tabs">
+          <ul>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#details">Details</a></li>
+          </ul>
+          <div id="description">
+            <p><?php echo $product_description; ?></p>
+          </div>
+          <div id="details">
+            <p><?php echo $product_details; ?></p>
+          </div>
+        </div>
+		<div class="entry-content">
+            <?php the_content(); ?>
         <?php
 			if(get_option('next_prev')==1){
 		echo '<p class="wpc-next-prev">';

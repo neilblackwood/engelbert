@@ -32,10 +32,28 @@ add_action( 'init', 'wpt_wpcproduct_posttype' );
 add_action( 'add_meta_boxes', 'add_wpcproduct_metaboxes' );
 
 function add_wpcproduct_metaboxes() {
-	add_meta_box('wpt_product_imgs', 'Product Images', 'wpt_product_imgs', 'wpcproduct');
+	add_meta_box('wpt_product_details', 'Product Desc/Details', 'wpt_product_details', 'wpcproduct');
+	add_meta_box('wpt_product_imgs', 'Product Image', 'wpt_product_imgs', 'wpcproduct');
 	add_meta_box('wpt_product_price', 'Product Price', 'wpt_product_price', 'wpcproduct', 'side');
 }
+function wpt_product_details() {
+    global $post;
+ // Noncename needed to verify where the data originated
+    echo '<input type="hidden" name="itemmeta_noncename" id="itemmeta_noncename" value="' .
+    wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 
+ // Get the location data if its already been entered
+
+    $product_description = get_post_meta($post->ID, 'product_description', true);
+    $product_details = get_post_meta($post->ID, 'product_details', true);
+
+ // Echo out the fields
+ echo '<br /><table width="100%" cellspacing="0" cellpadding="0"><tr><td>Product Description</td><td>&nbsp;&nbsp;</td><td>Product Details</td></tr><tr>';
+ echo '<td><textarea style="width:100%;" rows="5" name="product_description">'.esc_textarea( $product_description ).'</textarea></td>';
+ echo '<td>&nbsp;&nbsp;</td>';
+ echo '<td><textarea style="width:100%;" rows="5" name="product_details">'.esc_textarea( $product_details ).'</textarea></td>';
+ echo '</tr></table>';
+}
 function wpt_product_price() {
     global $post;
  // Noncename needed to verify where the data originated
@@ -58,15 +76,10 @@ function wpt_product_imgs() {
 
  // Get the location data if its already been entered
     $product_img1 = get_post_meta($post->ID, 'product_img1', true);
-	$product_img2 = get_post_meta($post->ID, 'product_img2', true);
-	$product_img3 = get_post_meta($post->ID, 'product_img3', true);
 
  // Echo out the field
- echo '<p><label><strong>Image 1</strong></label><input id="Image" class="upload-url" type="text" name="product_img1" value="'.$product_img1.'"><input id="st_upload_button" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
+ echo '<p><label><strong>Image</strong></label><input id="Image" class="upload-url" type="text" name="product_img1" value="'.$product_img1.'"><input id="st_upload_button" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
 
-	echo '<p><label><strong>Image 2</strong></label><input id="Image1" class="upload-url" type="text" name="product_img2" value="'.$product_img2.'"><input id="st_upload_button1" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
-
-	echo '<p><label><strong>Image 3</strong></label><input id="Image1" class="upload-url" type="text" name="product_img3" value="'.$product_img3.'"><input id="st_upload_button1" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
 }
 
 
@@ -83,6 +96,8 @@ function wpt_save_wpcproduct_meta($post_id, $post) {
         return $post->ID;
     // OK, we're authenticated: we need to find and save the data
     // We'll put it into an array to make it easier to loop though.
+	$item_meta['product_description'] 	= $_POST['product_description'];
+	$item_meta['product_details'] 	= $_POST['product_details'];
 	$item_meta['product_img1'] 		= $_POST['product_img1'];
 	$item_meta['product_img2'] 		= $_POST['product_img2'];
 	$item_meta['product_img3'] 		= $_POST['product_img3'];

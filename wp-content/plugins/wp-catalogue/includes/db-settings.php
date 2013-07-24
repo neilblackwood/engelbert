@@ -43,9 +43,9 @@ function wpc_product_table(){
 			  `product_summary` TEXT NOT NULL,
 			  `product_featured` TEXT NOT NULL,
 			  `product_cats` TEXT NOT NULL,
+			  `product_description` TEXT NOT NULL,
+			  `product_details` TEXT NOT NULL,
 			  `product_img1` TEXT NOT NULL,
-			  `product_img2` TEXT NOT NULL,
-			  `product_img3` TEXT NOT NULL,
 			  `product_price` TEXT NOT NULL,
 			  `product_date` TEXT NOT NULL,
               UNIQUE KEY id (id)
