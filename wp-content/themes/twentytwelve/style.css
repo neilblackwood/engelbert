@@ -158,6 +158,11 @@ img {
 	border: 0;
 	-ms-interpolation-mode: bicubic;
 }
+hgroup {
+    max-width: 960px;
+    max-width: 68.571428571rem;
+    float: left;
+}
 
 /* Clearing floats */
 .clear:after,
