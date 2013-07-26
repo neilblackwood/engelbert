@@ -1,15 +1,35 @@
 #wpc-catalogue-wrapper {
 }
 #wpc-catalogue-wrapper h4 {
-	font-size:20px;
-	color:#999999;
-	font-weight:normal;
+    font-size: 9px;
+    color: white;
+	font-weight: bold;
 	margin-bottom: 20px;
+    text-transform: uppercase;
+    background-color:black;
+    padding:8px;
+    text-align: center;
+    width: 180px;
+}
+#wpc-catalogue-wrapper h1,
+#wpc-catalogue-wrapper h3 {
+    margin:0 auto;
+    text-align: center;
+    color:#1f1f1f;
+}
+#wpc-catalogue-wrapper h1 {
+    font-size: 34px;
+    font-size: 2.45rem;
+    text-transform: uppercase;
+}
+#wpc-catalogue-wrapper h3 {
+    font-size: 20px;
+    font-size: 1.45rem;
 }
 #wpc-col-1 {
-	width:219px;
+	width:161px;
 	float:left;
-	margin: 0 28px 0 0;
+	margin: 0 55px 0 0;
 	line-height: inherit;
 }
 #wpc-col-1 ul {
@@ -22,39 +42,49 @@
 	list-style:none;
 	padding: 0;
 	margin: 0;
-	background: url(images/cat-sprtr.gif) no-repeat left bottom;
 }
 #wpc-col-1 ul li:last-child {
 	background: none;
 }
+#wpc-col-1 ul li.parent {
+	background: url(images/cat-sprtr.gif) no-repeat left top;
+	margin-top: 21px;
+	padding-top:19px;
+}
+#wpc-col-1 ul li.first {
+    background: none;
+    margin-top: 3px;
+	padding-top:0;
+}
 #wpc-col-1 ul li a {
 	display:block;
-	color:#3d484e;
-	font-size:18px;
+	color:#666666;
+	font-size:10px;
 	text-decoration:none;
-	padding:10px 30px 10px 21px;
-	background: url(images/sidebar-sprtr.gif) repeat-y 195px 0;
-	text-transform: capitalize;
+	padding:7px 30px 7px 0px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+#wpc-col-1 ul li.parent a {
+    font-size:12px;
+    padding:11px 30px 11px 0px;
 }
 #wpc-col-1 ul li a:hover, #wpc-col-1 ul li.active-wpc-cat a {
 	border-right:none;
-	background:url(images/bgs-1.png) no-repeat left top;
-	color:#ffffff;
+	color:#000000;
 }
 #wpc-col-2 {
 	width: 712px;
 	float:left;
 }
 .wpc-product {
-	border-bottom: #C7C7C7 1px solid;
 	float: left;
 	margin: 0 15px 27px 0;
 }
 .wpc-img {
-	border: 5px solid #dcdbdb;
 	margin-bottom: 10px;
-	background: #dcdbdb;
 	font-size: 0;
+	padding:17px 0 10px 0;
 }
 .wpc-next-prev {
 }
@@ -62,7 +92,6 @@
 	float:right;
 }
 .wpc-img:hover {
-	border: 5px solid #15845e;
 }
 .wpc-img img {
 	border-radius:0;
@@ -94,7 +123,6 @@
 	padding:0 0 0 7px;
 }
 .product-price {
-	float:right;
 }
 .wpc-paginations a {
 	display:block;
@@ -141,6 +169,11 @@
 }
 #tabs {
     height:141px;
+}
+.entry-content h3 a {
+    color: #666666;
+    text-decoration:none;
+    text-transform:uppercase;
 }
 .clear {
 	clear: both;

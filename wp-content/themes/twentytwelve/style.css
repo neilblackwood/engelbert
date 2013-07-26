@@ -756,12 +756,15 @@ article.sticky .featured-post {
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 	line-height: 1.714285714;
+	color:#1f1f1f;
+	font-family: Perpetua, "Myriad Pro", Georgia, Arial, sans-serif;
 }
 .entry-content h1,
 .comment-content h1 {
-	font-size: 21px;
-	font-size: 1.5rem;
+	font-size: 30px;
+	font-size: 2.125rem;
 	line-height: 1.5;
+	font-weight:normal;
 }
 .entry-content h2,
 .comment-content h2,
@@ -775,6 +778,7 @@ article.sticky .featured-post {
 	font-size: 16px;
 	font-size: 1.142857143rem;
 	line-height: 1.846153846;
+	font-weight: normal;
 }
 .entry-content h4,
 .comment-content h4 {
@@ -1435,8 +1439,8 @@ img#wpstats {
 	}
 	.site {
 		margin: 0 auto;
-		max-width: 960px;
-		max-width: 68.571428571rem;
+		max-width: 940px;
+		max-width: 67.143rem;
 		overflow: hidden;
 	}
 	.site-content {
@@ -1465,7 +1469,6 @@ img#wpstats {
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
 		border-bottom: 1px solid #ededed;
-		border-top: 1px solid #ededed;
 		display: inline-block !important;
 		text-align: left;
 		width: 100%;

@@ -17,7 +17,7 @@
 		if(is_single()){
 			$pname	=	'&gt;&gt;'.get_the_title();	
 		}
-		echo '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
+		//echo '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
 		 ?>
     	<div id="wpc-catalogue-wrapper">
 		<?php
@@ -109,8 +109,11 @@
         <?php $product_description = get_post_meta($post->ID, 'product_description', true); ?>
         <?php $product_details = get_post_meta($post->ID, 'product_details', true); ?>
         <?php $product_price = get_post_meta($post->ID, 'product_price', true); ?>
-        <?php if($product_price): ?><h4><span class="product-price">Price: <span><?php echo $product_price; ?></span></span></h4><?php endif; ?>
     <article class="post">
+        <div class="entry-content">
+            <h3><?php echo '<a href="'.$cat_url.'">'.$tname.'</a>'; ?></h3>
+            <h1><?php echo get_the_title() ?></h1>
+        </div>
         <div id="tabs">
           <ul>
             <li><a href="#description">Description</a></li>
@@ -136,6 +139,7 @@
 		}
 		?>
         </div>
+        <h4><span class="product-price"><?php if($product_price): ?>Price: <span><?php echo $product_price; ?></span><?php else: ?>Pris ges på efterfrågan<?php endif; ?></span></h4>
 
 </article>
         <?php endwhile; endif; ?>

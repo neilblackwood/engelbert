@@ -18,8 +18,8 @@ function catalogue() {
 	$args1 = array(
 			'orderby' => 'term_order',
 			'order' => 'ASC',
-			'hide_empty' => true,
-		);
+			'hide_empty' => false,
+	);
 
 	$terms	=	get_terms('wpccategories',$args1);
 	$count	=	count($terms);
@@ -44,13 +44,14 @@ function catalogue() {
 	}
 	
 	$catalogue_page_url	=	get_option('catalogue_page_url');
-	 $terms	=	get_terms('wpccategories');
+	 $terms	=	get_terms('wpccategories',$args1);
 		global $post;
 		$terms1 = get_the_terms($post->id, 'wpccategories');
 		if($terms1){
 		foreach( $terms1 as $term1 ){
 			$slug	= $term1->slug;
 			$tname	=	$term1->name;
+			$tdesc	=	$term1->description;
 			$cat_url	=	get_bloginfo('siteurl').'/?wpccategories=/'.$slug;
 		};
 	}
@@ -60,19 +61,25 @@ function catalogue() {
 		}
 		
 		$return_string = '<div id="wpc-catalogue-wrapper">';
-		$return_string .= '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
+		//$return_string .= '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
 		$return_string .= '<div id="wpc-col-1">';
         $return_string .= '<ul class="wpc-categories">';
 		
 		// generating sidebar
 		if($count>0){
-			$return_string .= '<li class="wpc-category ' . $class . '"><a href="'. get_option('catalogue_page_url') .'">All Products</a></li>';	
+			//$return_string .= '<li class="wpc-category ' . $class . '"><a href="'. get_option('catalogue_page_url') .'">All Products</a></li>';
        		foreach($terms as $term){
 				if($term_slug==$term->slug){
 				$class	=	'active-wpc-cat';
 			}else{
 				$class	=	'';
 			}
+		        if($term->parent==0){
+		            $class .= ' parent';
+		        }
+		        if($terms[0]==$term){
+		            $class .= ' first';
+		        }
 			$return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>'; 	
 			}
 		}else{
@@ -131,6 +138,12 @@ function catalogue() {
 			$i = 1;
 			$return_string .= '  <!--col-2-->
 						<div id="wpc-col-2">
+						<div class="entry-content">
+                            <h1>'.$tname.'</h1>
+                            <h3>'.$tdesc.'</h3>
+						</div>
+						<div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
+						</div>
 						<div id="wpc-products">';
 				while($products->have_posts()): $products->the_post();
 				$title		=	get_the_title(); 
