@@ -153,8 +153,6 @@ function my_edit_wpcproduct_columns( $columns ) {
 	return $columns;
 }
 
-
-
 add_action( 'manage_wpcproduct_posts_custom_column', 'my_manage_wpcproduct_columns', 10, 2 );
 function my_manage_wpcproduct_columns( $column, $post_id ) {
 	global $post;

@@ -2,7 +2,7 @@
 
 function catalogue() {
 	
-	global $post;
+	global $post, $categories, $args1;
 	$post_data = get_post($post->ID, ARRAY_A);
 	if(get_queried_object()->taxonomy){
 		$slug	=	get_queried_object()->taxonomy.'/'.get_queried_object()->slug;
@@ -44,7 +44,7 @@ function catalogue() {
 	}
 	
 	$catalogue_page_url	=	get_option('catalogue_page_url');
-	 $terms	=	get_terms('wpccategories',$args1);
+
 		global $post;
 		$terms1 = get_the_terms($post->id, 'wpccategories');
 		if($terms1){
@@ -88,7 +88,7 @@ function catalogue() {
 		
 		$return_string .= '</ul>';
         $return_string .=' </div>';
-		
+
 		// products area
 		$per_page	=	get_option('pagination');
 		if($per_page==0){
@@ -196,7 +196,36 @@ function catalogue() {
 	
 }
 
-
-
-
 add_shortcode('wp-catalogue','catalogue');
+
+// Add the top categories to the primary menu
+add_filter( 'wp_nav_menu_items', 'your_custom_menu_item', 10, 2 );
+function your_custom_menu_item ( $items, $args ) {
+    if ($args->theme_location == 'primary') {
+        $args1 = array(
+                'orderby' => 'term_order',
+                'order' => 'ASC',
+                'hide_empty' => false,
+        );
+        $categories = get_terms('wpccategories',$args1);
+
+        $categories_menu = '<li><a href="#" onclick="return false;">Produkter</a><ul>';
+        foreach($categories as $category){
+            //Limit to the top categories
+            if($category->parent == 0){
+                $class = 'parent';
+            } else {
+                $class = '';
+            }
+            if($category->parent==0&&($categories[0]!=$category)){
+                $categories_menu .=  '<li class="border"><hr /></li>';
+            }
+            if($category->parent <= 3){
+                $categories_menu .=  '<li class="'.$class.'"><a href="'.get_term_link($category->slug, 'wpccategories').'">'. $category->name .'</a></li>';
+            }
+        }
+
+        $categories_menu .= '</ul></li>';
+    }
+    return $categories_menu . $items;
+}
