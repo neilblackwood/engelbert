@@ -52,7 +52,7 @@ function catalogue() {
 			$slug	= $term1->slug;
 			$tname	=	$term1->name;
 			$tdesc	=	$term1->description;
-			$cat_url	=	get_bloginfo('siteurl').'/?wpccategories=/'.$slug;
+			$cat_url	=	get_bloginfo('siteurl').'/kategori/'.$slug;
 		};
 	}
 
@@ -80,7 +80,7 @@ function catalogue() {
 		        if($terms[0]==$term){
 		            $class .= ' first';
 		        }
-			$return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>'; 	
+			$return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
 			}
 		}else{
 			$return_string .=  '<li class="wpc-category"><a href="#">No category</a></li>';	

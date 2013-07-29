@@ -30,8 +30,6 @@
 <![endif]-->
 <?php wp_head(); ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.3.custom.min.css" />
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.9.1.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script>
 $(function() {
 $( "#tabs" ).tabs();

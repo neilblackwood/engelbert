@@ -21,7 +21,7 @@ function wpt_wpcproduct_posttype() {
 			'menu_icon' => WP_CATALOGUE.'/images/shopping-basket.png',  // Icon Path
             'supports' => array( 'title','editor'),
             'capability_type' => 'post',
-            'rewrite' => array("slug" => "wpcproduct"), // Permalinks format
+            'rewrite' => array("slug" => "produkter"), // Permalinks format
             'menu_position' => 121,
             'register_meta_box_cb' => 'add_wpcproduct_metaboxes',
         )
@@ -138,7 +138,7 @@ $labels = array(
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'wpccategories', 'with_front' => false ),
+    'rewrite' => array( 'slug' => 'kategori', 'with_front' => false ),
   ));
 } 
 

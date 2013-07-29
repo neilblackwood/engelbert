@@ -152,6 +152,28 @@ function twentytwelve_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'twentytwelve_scripts_styles' );
 
+
+/**
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
+ *
+ * @since Twenty Twelve 1.0
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
+ */
+function jquery_cdn() {
+   if (!is_admin()) {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, '1.9.1');
+      wp_register_script('jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', false, '1.10.3');
+      wp_enqueue_script('jquery');
+      wp_enqueue_script('jquery-ui');
+      }
+   }
+add_action('init', 'jquery_cdn');
+
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.

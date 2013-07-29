@@ -10,7 +10,7 @@
 		foreach( $terms1 as $term1 ){
 			$slug	= $term1->slug;
 			$tname	=	$term1->name;
-			$cat_url	=	get_bloginfo('siteurl').'/?wpccategories=/'.$slug;
+			$cat_url	=	get_bloginfo('siteurl').'/kategori/'.$slug;
 		};
 	}
 
@@ -111,8 +111,8 @@
         <?php $product_price = get_post_meta($post->ID, 'product_price', true); ?>
     <article class="post">
         <div class="entry-content">
-            <h3><?php echo '<a href="'.$cat_url.'">'.$tname.'</a>'; ?></h3>
-            <h1><?php echo get_the_title() ?></h1>
+            <h4><?php echo '<a href="'.$cat_url.'">'.$tname.'</a>'; ?></h4>
+            <h2><?php echo get_the_title() ?></h2>
         </div>
         <div id="tabs">
           <ul>
@@ -139,7 +139,7 @@
 		}
 		?>
         </div>
-        <h4><span class="product-price"><?php if($product_price): ?>Price: <span><?php echo $product_price; ?></span><?php else: ?>Pris ges på efterfrågan<?php endif; ?></span></h4>
+        <h5><span class="product-price"><?php if($product_price): ?>Price: <span><?php echo $product_price; ?></span><?php else: ?>Pris ges på efterfrågan<?php endif; ?></span></h5>
 
 </article>
         <?php endwhile; endif; ?>

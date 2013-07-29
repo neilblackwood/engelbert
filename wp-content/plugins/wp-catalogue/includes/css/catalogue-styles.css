@@ -1,6 +1,6 @@
 #wpc-catalogue-wrapper {
 }
-#wpc-catalogue-wrapper h4 {
+#wpc-catalogue-wrapper h5 {
     font-size: 9px;
     color: white;
 	font-weight: bold;
@@ -20,17 +20,8 @@
 #wpc-catalogue-wrapper h1 {
     text-transform: uppercase;
 }
-#wpc-product h1, #wpc-product h3 {
+#wpc-product h2, #wpc-product h4 {
     text-align: left;
-}
-#wpc-product h1 {
-	font-size: 30px;
-	font-size: 2.125rem;
-	text-transform: none;
-}
-#wpc-product h3 {
-	font-size: 16px;
-	font-size: 1.142857143rem;
 }
 #wpc-col-1 {
 	width:161px;
@@ -176,7 +167,7 @@
 #tabs {
     height:141px;
 }
-.entry-content h3 a {
+.entry-content h4 a {
     color: #666666;
     text-decoration:none;
     text-transform:uppercase;

@@ -769,9 +769,10 @@ article.sticky .featured-post {
 .entry-content h2,
 .comment-content h2,
 .mu_register h2 {
-	font-size: 18px;
-	font-size: 1.285714286rem;
+	font-size: 30px;
+	font-size: 2.125rem;
 	line-height: 1.6;
+	font-weight:normal;
 }
 .entry-content h3,
 .comment-content h3 {
@@ -782,14 +783,15 @@ article.sticky .featured-post {
 }
 .entry-content h4,
 .comment-content h4 {
-	font-size: 14px;
-	font-size: 1rem;
+	font-size: 16px;
+	font-size: 1.142857143rem;
 	line-height: 1.846153846;
+	font-weight: normal;
 }
 .entry-content h5,
 .comment-content h5 {
-	font-size: 13px;
-	font-size: 0.928571429rem;
+	font-size: 14px;
+	font-size: 1rem;
 	line-height: 1.846153846;
 }
 .entry-content h6,
