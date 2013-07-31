@@ -534,8 +534,8 @@ a:hover {
 	background-color: #fff;
 }
 .site-content {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
+    margin: 7px 0 0;
+    margin: 0.5rem 0 0;
 }
 .widget-area {
 	margin: 24px 0 0;
@@ -544,8 +544,8 @@ a:hover {
 
 /* Header */
 .site-header {
-	padding: 24px 0;
-	padding: 1.714285714rem 0;
+	padding: 24px 0 0;
+	padding: 1.714285714rem 0 0;
 }
 .site-header h1,
 .site-header h2 {
@@ -659,7 +659,7 @@ section[role="banner"] {
 
 /* Footer */
 footer[role="contentinfo"] {
-	border-top: 1px solid #ededed;
+    border-top: 1px solid #ccc;
 	clear: both;
 	font-size: 12px;
 	font-size: 0.857142857rem;
@@ -808,9 +808,6 @@ article.sticky .featured-post {
 	margin: 0 0 0.714285714rem;
 	line-height: 1.714285714;
 }
-.entry-content p.hidden {
-    display:none;
-}
 .entry-content ol,
 .comment-content ol,
 .entry-content ul,
@@ -894,6 +891,8 @@ article.sticky .featured-post {
 .entry-content address,
 .comment-content address {
 	display: block;
+	font-family: Arial, sans-serif;
+	font-style: normal;
 	line-height: 1.714285714;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
@@ -903,9 +902,47 @@ article.sticky .featured-post {
     padding-right:47px;
     float:left;
 }
+#flagshipStore p, #storeTabsWrapper table, #storeTabsWrapper p, #storeTabsWrapper strong {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 #storeTabsWrapper {
     width:700px;
     display: inline-block;
+}
+#storeTabsWrapper strong {
+    text-transform: uppercase;
+}
+#storeTabsWrapper .hidden {
+    display:none;
+}
+#storeTabs .ui-tabs-panel {
+    padding: 19px 0;
+}
+#storeTabs ul {
+    font-size:16px;
+    font-family: Perpetua, Georgia, Arial, sans-serif;
+    border: none;
+}
+#storeTabs ul li {
+    border: none;
+    border-left: 1px solid #b2b2b2;
+    background: none;
+}
+#storeTabs ul a {
+    width: auto;
+    padding: 0 13px 0 22px;
+    line-height: 0.8;
+}
+#storeTabs .ui-state-active a, #storeTabs a:hover{
+    text-decoration: underline;
+    color: black;
+}
+#storeTabs li.first {
+    border: none;
+}
+#storeTabs li.first a {
+    padding-left: 0;
 }
 img.alignleft {
 	margin: 12px 24px 12px 0;
@@ -946,10 +983,9 @@ img.aligncenter {
 }
 .entry-content table,
 .comment-content table {
-	border-bottom: 1px solid #ededed;
 	color: #757575;
-	font-size: 12px;
-	font-size: 0.857142857rem;
+	font-size: 11px;
+	font-size: 0.785714286rem;
 	line-height: 2;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
@@ -964,15 +1000,9 @@ img.aligncenter {
 }
 .entry-content td,
 .comment-content td {
-	border-top: 1px solid #ededed;
 	padding: 6px 10px 6px 0;
 }
 .site-content article {
-	border-bottom: 4px double #ededed;
-	margin-bottom: 72px;
-	margin-bottom: 5.142857143rem;
-	padding-bottom: 24px;
-	padding-bottom: 1.714285714rem;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -1461,6 +1491,12 @@ img#wpstats {
 		float: left;
 		width: 100%;
 	}
+	#main {
+	    border-top: 1px solid #ccc;
+	}
+	.home #main, .home footer[role="contentinfo"] {
+	    border: none;
+	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
 	body.full-width .site-content {
@@ -1482,15 +1518,15 @@ img#wpstats {
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
-		border-bottom: 1px solid #ededed;
 		display: inline-block !important;
 		text-align: left;
-		width: 100%;
+        width: auto;
+        margin: 0 21%;
 	}
 	.main-navigation ul {
 		margin: 0;
 		text-indent: 0;
-		letter-spacing:1px;
+		letter-spacing:3px;
 	}
 	.main-navigation li a,
 	.main-navigation li {
@@ -1508,8 +1544,8 @@ img#wpstats {
 		color: #000;
 	}
 	.main-navigation li {
-		margin: 0 40px 0 0;
-		margin: 0 2.857142857rem 0 0;
+		margin: 0 26px;
+		margin: 0 1.85rem;
 		position: relative;
 		text-align: center;
 	}
@@ -1520,6 +1556,7 @@ img#wpstats {
     .main-navigation li hr {
         color: #d1d1d1;
         background-color: #d1d1d1;
+        margin:13px;
     }
 	.main-navigation li ul {
 		display: none;
@@ -1531,6 +1568,7 @@ img#wpstats {
         border: 1px solid #ededed;
         margin-top:-9px;
         background-color:white;
+        letter-spacing:2px;
 	}
 	.main-navigation li ul ul {
 		top: 0;

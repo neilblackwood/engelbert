@@ -1,4 +1,6 @@
 #wpc-catalogue-wrapper {
+    margin: 38px 0 0;
+    margin: 2.715rem 0 0;
 }
 #wpc-catalogue-wrapper h5 {
     font-size: 9px;
@@ -19,6 +21,7 @@
 }
 #wpc-catalogue-wrapper h1 {
     text-transform: uppercase;
+    line-height: 0.77;
 }
 #wpc-product h2, #wpc-product h4 {
     text-align: left;
@@ -50,8 +53,8 @@
 }
 #wpc-col-1 ul li.first {
     background: none;
-    margin-top: 3px;
 	padding-top:0;
+	margin-top:0;
 }
 #wpc-col-1 ul li a {
 	display:block;
@@ -69,6 +72,9 @@
 #wpc-col-1 ul li a:hover, #wpc-col-1 ul li.active-wpc-cat a {
 	border-right:none;
 	color:#000000;
+}
+#wpc-col-1 ul li.first a {
+    padding-top:0;
 }
 #wpc-col-2 {
 	width: 712px;

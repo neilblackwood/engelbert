@@ -36,6 +36,9 @@
         scroll: {
             fx: "crossfade"
         },
+        auto: {
+            timeoutDuration: 6000
+        },
         prev: "left",
         next: "right",
         pagination: {
