@@ -757,7 +757,7 @@ article.sticky .featured-post {
 	margin: 1.714285714rem 0;
 	line-height: 1.714285714;
 	color:#1f1f1f;
-	font-family: Perpetua, "Myriad Pro", Georgia, Arial, sans-serif;
+	font-family: Perpetua, Georgia, Arial, sans-serif;
 }
 .entry-content h1,
 .comment-content h1 {
@@ -807,6 +807,9 @@ article.sticky .featured-post {
 	margin: 0 0 24px;
 	margin: 0 0 0.714285714rem;
 	line-height: 1.714285714;
+}
+.entry-content p.hidden {
+    display:none;
 }
 .entry-content ol,
 .comment-content ol,
@@ -894,6 +897,15 @@ article.sticky .featured-post {
 	line-height: 1.714285714;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
+}
+#flagshipStore {
+    width:190px;
+    padding-right:47px;
+    float:left;
+}
+#storeTabsWrapper {
+    width:700px;
+    display: inline-block;
 }
 img.alignleft {
 	margin: 12px 24px 12px 0;
@@ -1447,7 +1459,7 @@ img#wpstats {
 	}
 	.site-content {
 		float: left;
-		width: 65.104166667%;
+		width: 100%;
 	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
@@ -1557,7 +1569,7 @@ img#wpstats {
 	.main-navigation .current-menu-ancestor > a,
 	.main-navigation .current_page_item > a,
 	.main-navigation .current_page_ancestor > a {
-		color: #636363;
+		color: #000;
 	}
 	.menu-toggle {
 		display: none;

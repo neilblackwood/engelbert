@@ -20,5 +20,34 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>
+    /*	CarouFredSel: a circular, responsive jQuery carousel.
+        Configuration created by the "Configuration Robot"
+        at caroufredsel.dev7studios.com
+    */
+    $("#carousel").carouFredSel({
+        width: 960,
+        height: 600,
+        items: {
+            visible: 1,
+            width: 960,
+            height: 600
+        },
+        scroll: {
+            fx: "crossfade"
+        },
+        prev: "left",
+        next: "right",
+        pagination: {
+            container: "#pager",
+            keys: true,
+            anchorBuilder	: function(nr) {
+                return "<a href='#'><span>"+nr+"</span></a>";
+            }
+        },
+        swipe: true,
+        duration: 3000
+    });
+</script>
 </body>
 </html>
