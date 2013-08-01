@@ -897,14 +897,17 @@ article.sticky .featured-post {
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
 }
-#flagshipStore {
+#leftCol {
     width:190px;
     padding-right:47px;
     float:left;
 }
-#flagshipStore p, #storeTabsWrapper table, #storeTabsWrapper p, #storeTabsWrapper strong {
+#leftCol p, #storeTabsWrapper table, #storeTabsWrapper p, #storeTabsWrapper strong {
     margin: 0;
     font-family: Arial, sans-serif;
+}
+#leftCol p, #leftCol address {
+    color:#1f1f1f;
 }
 #storeTabsWrapper {
     width:700px;
@@ -983,7 +986,7 @@ img.aligncenter {
 }
 .entry-content table,
 .comment-content table {
-	color: #757575;
+	color: #1f1f1f;
 	font-size: 11px;
 	font-size: 0.785714286rem;
 	line-height: 2;
@@ -1521,7 +1524,7 @@ img#wpstats {
 		display: inline-block !important;
 		text-align: left;
         width: auto;
-        margin: 0 21%;
+        margin: 0 12.6%;
 	}
 	.main-navigation ul {
 		margin: 0;

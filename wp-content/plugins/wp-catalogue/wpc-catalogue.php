@@ -39,6 +39,8 @@ function catalogue() {
 		}
 	}
 	$term_slug	=	get_queried_object()->slug;
+	$term_id = get_queried_object()->term_id;
+	$term_parent = get_queried_object()->parent;
 	if(!$term_slug){
 		$class	=	"active-wpc-cat";	
 	}
@@ -80,7 +82,14 @@ function catalogue() {
 		        if($terms[0]==$term){
 		            $class .= ' first';
 		        }
-			$return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
+                if($term->parent <= 3){
+                    $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
+                }
+                if (($term->parent==5&&$term_id==5)||($term_parent==5&&$term->parent==5)) {
+                    //Put a foreach in here
+                    //foreach($terms as $term){
+                    $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
+                }
 			}
 		}else{
 			$return_string .=  '<li class="wpc-category"><a href="#">No category</a></li>';	
