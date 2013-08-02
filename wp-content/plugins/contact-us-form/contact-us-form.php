@@ -51,14 +51,14 @@ function showForm( $params = '' )
 		$result = $this->sendMail( $n, $params );
 		
 	$captcha = new ContactUsFormCaptcha( rand(1000000000, 9999999999) );
-	
-	$form = '<div class="contactform" id="cuform'.$n.'">';
+    $form = '<div class="contactform" id="cuform'.$n.'">';
 	
 	if ( !empty($result) )
 	{
-		if ( $result == $this->o['msg_ok'] )
-
-			$form .= '<p class="contactform_respons">'.$result.'</p>';
+		if ( $result == $this->o['msg_ok'] ) {
+			$result = "<h2 class='contactform_respons'>".$result."</h2><p class='contactform_respons'>We'll get back to you shortly.</p>";
+            $form .= '<script type="text/javascript"> $(".entry-content").html("'.$result.'").attr("id", "thanks"); </script>';
+		}
 		else
 
 			$form .= '<p class="contactform_error">'.$result.'</p>';
@@ -537,6 +537,14 @@ function addStyle()
 			.".cuf_input {display:none !important; visibility:hidden !important;}\n"
 			."#contactsubmit:hover, #contactsubmit:focus {
 	text-decoration: none;
+}
+#thanks {
+    height:780px;
+}
+#thanks h2, #thanks p {
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
 }
 #contactsubmit:active {background: #849F00}
 #contactsubmit {
