@@ -76,6 +76,9 @@
 #wpc-col-1 ul li.first a {
     padding-top:0;
 }
+#wpc-col-1 li ul a {
+    padding:7px 0 7px 7px;
+}
 #wpc-col-2 {
 	width: 712px;
 	float:left;

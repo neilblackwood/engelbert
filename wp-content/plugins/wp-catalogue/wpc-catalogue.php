@@ -66,9 +66,27 @@ function catalogue() {
 		//$return_string .= '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
 		$return_string .= '<div id="wpc-col-1">';
         $return_string .= '<ul class="wpc-categories">';
-		
+
 		// generating sidebar
 		if($count>0){
+
+		    //Generate subcategory list, if applicable
+		    $subCatString = '';
+		    if (($term_id==5)||($term_parent==5)) {
+                $subCatString .= '<ul class="wpc-categories">';
+                foreach($terms as $subTerm){
+                    if($term_slug==$subTerm->slug){
+                    $class	=	'active-wpc-cat';
+                    }else{
+                        $class	=	'';
+                    }
+                    if($subTerm->parent==5){
+                        $subCatString .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($subTerm->slug, 'wpccategories').'">'. $subTerm->name .'</a></li>';
+                    }
+                }
+                $subCatString .= '</ul>';
+		    }
+
 			//$return_string .= '<li class="wpc-category ' . $class . '"><a href="'. get_option('catalogue_page_url') .'">All Products</a></li>';
        		foreach($terms as $term){
 				if($term_slug==$term->slug){
@@ -83,12 +101,11 @@ function catalogue() {
 		            $class .= ' first';
 		        }
                 if($term->parent <= 3){
-                    $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
-                }
-                if (($term->parent==5&&$term_id==5)||($term_parent==5&&$term->parent==5)) {
-                    //Put a foreach in here
-                    //foreach($terms as $term){
-                    $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
+                    if ($term->term_id==5) {
+                        $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a>'.$subCatString.'</li>';
+                    } else {
+                        $return_string .=  '<li class="wpc-category '. $class .'"><a href="'.get_term_link($term->slug, 'wpccategories').'">'. $term->name .'</a></li>';
+                    }
                 }
 			}
 		}else{
