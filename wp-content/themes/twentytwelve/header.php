@@ -98,10 +98,7 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="/wp-content/uploads/2013/08/engelbertLogo.png" alt="<?php bloginfo( 'name' ); ?> <?php bloginfo( 'description' ); ?>" title="<?php bloginfo( 'name' ); ?> <?php bloginfo( 'description' ); ?>" /></a></h1>
-			<h2 class="site-description"></h2>
-		</hgroup>
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="/wp-content/uploads/2013/08/engelbertLogo.png" alt="<?php bloginfo( 'name' ); ?> <?php bloginfo( 'description' ); ?>" title="<?php bloginfo( 'name' ); ?> <?php bloginfo( 'description' ); ?>" /></a></h1>
         <?php // Put the sidebar in here ?>
         <?php get_sidebar(); ?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">

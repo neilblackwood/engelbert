@@ -31,7 +31,7 @@ class Bogo_Widget_Language_Switcher extends WP_Widget {
 		echo $before_widget;
 
 		if ( $title )
-			echo $before_title . $title . $after_title;
+			//echo $before_title . $title . $after_title;
 
 		echo bogo_language_switcher();
 

@@ -190,6 +190,10 @@ function bogo_language_switcher( $args = '' ) {
 	foreach ( $available_languages as $code => $name ) {
 		$count += 1;
 		$class = array();
+		$countryCode = bogo_lang_slug( $code );
+		if($countryCode=='sv')
+		    $countryCode='se';
+
 		$class[] = bogo_language_tag( $code );
 		$class[] = bogo_lang_slug( $code );
 
@@ -208,14 +212,14 @@ function bogo_language_switcher( $args = '' ) {
 
 		if ( is_singular() ) {
 			if ( empty( $translations[$code] ) || $locale == $code )
-				echo esc_html( $name );
+				echo $countryCode;
 			else
-				echo '<a rel="alternate" hreflang="' . bogo_language_tag( $code ) . '" href="' . get_permalink( $translations[$code] ) . '">' . esc_html( $name ) . '</a>';
+				echo '<a rel="alternate" hreflang="' . bogo_language_tag( $code ) . '" href="' . get_permalink( $translations[$code] ) . '">' . $countryCode . '</a>';
 		} else {
 			if ( $locale == $code )
-				echo esc_html( $name );
+				echo $countryCode;
 			else
-				echo '<a rel="alternate" hreflang="' . bogo_language_tag( $code ) . '" href="' . esc_url( bogo_url( null, $code ) ) . '">' . esc_html( $name ) . '</a>';
+				echo '<a rel="alternate" hreflang="' . bogo_language_tag( $code ) . '" href="' . esc_url( bogo_url( null, $code ) ) . '">' . $countryCode . '</a>';
 		}
 
 		echo '</li>';

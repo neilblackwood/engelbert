@@ -260,6 +260,18 @@ li.bypostauthor cite span {
 	background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6);
 	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
 }
+#searchsubmit {
+    background: url(css/images/search-icon.png) no-repeat right top;
+    background-size:17px 14px;
+    border: none;
+    padding: 0 10px;
+    padding: 0 0.714285714rem;
+    margin: 0;
+}
+#searchsubmit:active{
+	box-shadow: none;
+    background-color: #e1e1e1;
+}
 .menu-toggle,
 button,
 input[type="submit"],
@@ -534,8 +546,8 @@ a:hover {
     margin: 0.5rem 0 0;
 }
 .widget-area {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
+	margin: 0 0 54px ;
+	margin: 0 0 3.85715rem;
 }
 
 /* Header */
@@ -615,9 +627,10 @@ section[role="banner"] {
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
 	hyphens: auto;
-	margin-bottom: 48px;
-	margin-bottom: 3.428571429rem;
 	word-wrap: break-word;
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0 0 0 10px;
 }
 .widget-area .widget h3 {
 	margin-bottom: 24px;
@@ -629,6 +642,15 @@ section[role="banner"] {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
+}
+.language-switcher li {
+    float:left;
+    padding: 0 8px;
+}
+.widget-area #s, .widget-area .widget .language-switcher li, .widget-area .widget .language-switcher a {
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
 }
 .widget-area .widget p {
 	margin-bottom: 24px;
@@ -650,7 +672,18 @@ section[role="banner"] {
 	color: #21759b;
 }
 .widget-area #s {
-	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
+    border: none;
+    width: 45px;
+    border-right: 1px solid #999;
+    padding: 0 6px;
+    padding: 0 0.428571429rem;
+	/*width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
+}
+.widget-area #s, #searchsubmit {
+    margin: 0;
+    float: left;
+    height:12px;
+    letter-spacing: 2px;
 }
 
 /* Footer */
@@ -1517,13 +1550,15 @@ img#wpstats {
 		font-size: 1.857142857rem;
 		line-height: 1.846153846;
 		margin-bottom: 0;
+        margin: 3px 25.4%;
+        position: absolute;
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
 		display: inline-block !important;
 		text-align: left;
         width: auto;
-        margin: 0 12.6%;
+        margin: 0 12%;
 	}
 	.main-navigation ul {
 		margin: 0;
@@ -1546,8 +1581,9 @@ img#wpstats {
 		color: #000;
 	}
 	.main-navigation li {
-		margin: 0 26px;
-		margin: 0 1.85rem;
+		margin: 0 10px;
+		margin: 0 0.7142857rem;
+		width: 150px;
 		position: relative;
 		text-align: center;
 	}
