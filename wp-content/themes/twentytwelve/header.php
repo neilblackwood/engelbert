@@ -31,6 +31,7 @@
 <?php wp_head(); ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.3.custom.min.css" />
 <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.07016.js"></script>
 <script>
 $(function() {
 $( "#tabs, #storeTabs" ).tabs();

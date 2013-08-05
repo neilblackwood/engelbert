@@ -33,7 +33,7 @@ add_action( 'add_meta_boxes', 'add_wpcproduct_metaboxes' );
 
 function add_wpcproduct_metaboxes() {
 	add_meta_box('wpt_product_details', 'Product Desc/Details', 'wpt_product_details', 'wpcproduct');
-	add_meta_box('wpt_product_imgs', 'Product Image', 'wpt_product_imgs', 'wpcproduct');
+	add_meta_box('wpt_product_imgs', 'Product Images', 'wpt_product_imgs', 'wpcproduct');
 	add_meta_box('wpt_product_price', 'Product Price', 'wpt_product_price', 'wpcproduct', 'side');
 }
 function wpt_product_details() {
@@ -76,10 +76,15 @@ function wpt_product_imgs() {
 
  // Get the location data if its already been entered
     $product_img1 = get_post_meta($post->ID, 'product_img1', true);
+	$product_img2 = get_post_meta($post->ID, 'product_img2', true);
+	$product_img3 = get_post_meta($post->ID, 'product_img3', true);
 
  // Echo out the field
- echo '<p><label><strong>Image</strong></label><input id="Image" class="upload-url" type="text" name="product_img1" value="'.$product_img1.'"><input id="st_upload_button" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
+ echo '<p><label><strong>Image 1</strong></label><input id="Image1" class="upload-url" type="text" name="product_img1" value="'.$product_img1.'"><input id="st_upload_button" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
 
+	echo '<p><label><strong>Image 2</strong></label><input id="Image1" class="upload-url" type="text" name="product_img2" value="'.$product_img2.'"><input id="st_upload_button1" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
+
+	echo '<p><label><strong>Image 3</strong></label><input id="Image3" class="upload-url" type="text" name="product_img3" value="'.$product_img3.'"><input id="st_upload_button1" class="st_upload_button" type="button" name="upload_button" value="Upload"></p>';
 }
 
 
@@ -152,6 +157,8 @@ function my_edit_wpcproduct_columns( $columns ) {
 	);
 	return $columns;
 }
+
+
 
 add_action( 'manage_wpcproduct_posts_custom_column', 'my_manage_wpcproduct_columns', 10, 2 );
 function my_manage_wpcproduct_columns( $column, $post_id ) {

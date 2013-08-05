@@ -260,13 +260,37 @@ li.bypostauthor cite span {
 	background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6);
 	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
 }
-#searchsubmit {
-    background: url(css/images/search-icon.png) no-repeat right top;
-    background-size:17px 14px;
-    border: none;
-    padding: 0 10px;
-    padding: 0 0.714285714rem;
-    margin: 0;
+label[for="s"] {
+    background: url(css/images/search-icon.png) no-repeat 2px 4px;
+    background-size: 17px 14px;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 14px;
+    height: 15px;
+    text-indent: -9999em;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    text-align: left;
+}
+.field-search {
+    width: 1px;
+    overflow: hidden;
+    margin: 0px 0 0;
+    padding: 0 0 0 20px;
+    position: relative;
+    float: left;
+}
+.field-search-active {
+    width: 180px;
+}
+.field-search-animate{
+    -webkit-transition:width 400ms ease;
+    -moz-transition:width 400ms ease;
+    -o-transition:
+    width 400ms ease;
+    transition:width 400ms ease
 }
 #searchsubmit:active{
 	box-shadow: none;
@@ -506,10 +530,10 @@ body.custom-font-enabled {
 }
 a {
 	outline: none;
-	color: #21759b;
+	color: #6a6a6a;
 }
 a:hover {
-	color: #0f3647;
+	color: #000;
 }
 
 /* Assistive text */
@@ -628,8 +652,8 @@ section[role="banner"] {
 	-moz-hyphens: auto;
 	hyphens: auto;
 	word-wrap: break-word;
-    float: left;
-    margin: 0 10px 0 0;
+    float: right;
+    margin: 0;
     padding: 0 0 0 10px;
 }
 .widget-area .widget h3 {
@@ -647,7 +671,7 @@ section[role="banner"] {
     float:left;
     padding: 0 8px;
 }
-.widget-area #s, .widget-area .widget .language-switcher li, .widget-area .widget .language-switcher a {
+#searchsubmit, .widget-area #s, .widget-area .widget .language-switcher li, .widget-area .widget .language-switcher a {
     text-transform: uppercase;
     font-family: Arial, sans-serif;
     font-size: 8px;
@@ -672,26 +696,37 @@ section[role="banner"] {
 	color: #21759b;
 }
 .widget-area #s {
-    border: none;
-    width: 45px;
-    border-right: 1px solid #999;
-    padding: 0 6px;
-    padding: 0 0.428571429rem;
+    padding: 0;
+    width: 178px    ;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    left: 1px;
+    outline: none;
 	/*width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
+}
+#searchsubmit {
+    border: none;
+    width: 50px;
+    padding: 0;
+    margin-right: 10px;
+    background: none;
+    text-align: left;
 }
 .widget-area #s, #searchsubmit {
     margin: 0;
     float: left;
-    height:12px;
+    height:14px;
     letter-spacing: 2px;
 }
-
 /* Footer */
 footer[role="contentinfo"] {
     border-top: 1px solid #ccc;
+    color: #767676;
 	clear: both;
-	font-size: 12px;
-	font-size: 0.857142857rem;
+	font-size: 9px;
+	font-size: 0.5rem;
+    font-family: Arial, sans-serif;
 	line-height: 2;
 	max-width: 960px;
 	max-width: 68.571428571rem;
@@ -1539,7 +1574,7 @@ img#wpstats {
 	}
 	.widget-area {
 		float: right;
-		width: 26.041666667%;
+		width: 35.041667%;
 	}
 	.site-header h1,
 	.site-header h2 {
@@ -1558,7 +1593,7 @@ img#wpstats {
 		display: inline-block !important;
 		text-align: left;
         width: auto;
-        margin: 0 12%;
+        margin: 0 11% 0 13%;
 	}
 	.main-navigation ul {
 		margin: 0;
@@ -1586,7 +1621,7 @@ img#wpstats {
 		width: 150px;
 		position: relative;
 		text-align: center;
-	}
+    }
     .main-navigation li.border {
         width: 108px;
         width: 7.715rem;
@@ -1607,7 +1642,8 @@ img#wpstats {
         margin-top:-9px;
         background-color:white;
         letter-spacing:2px;
-        margin-left:-17px;
+        margin-left:7px;
+        width: 128px;
 	}
 	.main-navigation li ul ul {
 		top: 0;

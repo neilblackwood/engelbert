@@ -153,11 +153,11 @@
 	overflow: hidden;
 }
 .wpc-product-img {
-	width:161px;
-	float: right;
+	width:69px;
+	float: left;
 }
 .new-prdct-img {
-	border:#dcdbdb 5px solid;
+	border:1px solid #dadada;
 	margin-bottom:8px;
 	font-size: 0;
 	line-height: 0;

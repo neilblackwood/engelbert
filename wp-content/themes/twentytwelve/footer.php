@@ -14,7 +14,9 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
+			<p class="alignleft">&copy; 2013 Engelbert Stockholm</p>
+			<p class="alignright">+46 (0)8 84 09 55</p>
+			<?php /* <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a> */ ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
@@ -51,6 +53,28 @@
         swipe: true,
         duration: 3000
     });
+
+
+        var searchOptions = {
+                secondaryNavTransitionSpeed:400,
+                searchFieldTransitionSpeed:400
+        };
+
+        $('#searchform').submit(function(c){
+            if(!$('.widget-area div.field-search').hasClass("field-search-active")){
+                c.preventDefault();
+                showSearch($('.widget-area div.field-search'))
+            } else {
+                if($('#s').val()===""){
+                    c.preventDefault()
+                }
+            }
+        });
+
+        function showSearch(container) {
+            var fieldSearch = container, c=searchOptions.searchFieldTransitionSpeed,d;
+            if(Modernizr.csstransitions){fieldSearch.addClass("field-search-animate field-search-active").one("transitionend webkitTransitionEnd mozTransitionEnd oTransitionEnd",function(){fieldSearch.removeClass("field-search-animate");$('#s').focus()})}else{d=fieldSearch.addClass("field-search-active").width();fieldSearch.css({width:0}).animate({width:d},c,function(){fieldSearch.css("width","");fieldSearchInput.focus()})}fieldSearch.addClass("field-search-active");return
+        }
 </script>
 </body>
 </html>
