@@ -89,26 +89,37 @@ function showForm( $params = '' )
 			<div>
 			<input name="cuf_name'.$n.'" id="cuf_name'.$n.'" value="" class="cuf_input" />
 			<input name="cuf_sendit'.$n.'" id="cuf_sendit'.$n.'" value="1" class="cuf_input" />
-            <label for="cuf_title'.$n.'" class="cuf_label">'.__('Title', 'cuf-lang').':</label>
-			<select name="cuf_title'.$n.'" id="cuf_title'.$n.'" class="cuf_field">
-                <option value="0">
-                    Please select
-                </option>
-			    <option value="Mr">
-			        Mr
-			    </option>
-			    <option value="Mrs">
-			        Mrs
-			    </option>
-			</select>
-			<label for="cuf_senderfirst'.$n.'" class="cuf_label">'.__('First Name', 'cuf-lang').':</label>
-			<input name="cuf_senderfirst'.$n.'" id="cuf_senderfirst'.$n.'" size="30" value="'.$cuf_senderfirst.'" class="cuf_field" />
-			<label for="cuf_senderlast'.$n.'" class="cuf_label">'.__('Last Name', 'cuf-lang').':</label>
-			<input name="cuf_senderlast'.$n.'" id="cuf_senderlast'.$n.'" size="30" value="'.$cuf_senderlast.'" class="cuf_field" />
-			<label for="cuf_email'.$n.'" class="cuf_label">'.__('Email Address', 'cuf-lang').':</label>
-			<input name="cuf_email'.$n.'" id="cuf_email'.$n.'" size="30" value="'.$cuf_email.'" class="cuf_field" />
-			<label for="cuf_telephone'.$n.'" class="cuf_label">'.__('Telephone', 'cuf-lang').':</label>
-			<input name="cuf_telephone'.$n.'" id="cuf_telephone'.$n.'" size="30" value="'.$cuf_telephone.'" class="cuf_field" />';
+            <div class="required">
+                <label for="cuf_title'.$n.'" class="cuf_label">'.__('Title', 'cuf-lang').':</label>
+                <select name="cuf_title'.$n.'" id="cuf_title'.$n.'" class="cuf_field required">
+                    <option value="0">
+                        Please select
+                    </option>
+                    <option value="Mr">
+                        Mr
+                    </option>
+                    <option value="Mrs">
+                        Mrs
+                    </option>
+                </select>
+			</div>
+			<div class="required">
+                <label for="cuf_senderfirst'.$n.'" class="cuf_label">'.__('First Name', 'cuf-lang').':</label>
+                <input name="cuf_senderfirst'.$n.'" id="cuf_senderfirst'.$n.'" size="30" value="'.$cuf_senderfirst.'" class="cuf_field" />
+            </div>
+            <div class="required">
+                <label for="cuf_senderlast'.$n.'" class="cuf_label">'.__('Last Name', 'cuf-lang').':</label>
+                <input name="cuf_senderlast'.$n.'" id="cuf_senderlast'.$n.'" size="30" value="'.$cuf_senderlast.'" class="cuf_field" />
+			</div>
+			<div class="required">
+                <label for="cuf_email'.$n.'" class="cuf_label">'.__('Email Address', 'cuf-lang').':</label>
+                <input name="cuf_email'.$n.'" id="cuf_email'.$n.'" size="30" value="'.$cuf_email.'" class="cuf_field" />
+			</div>
+			<div>
+                <label for="cuf_telephone'.$n.'" class="cuf_label">'.__('Telephone', 'cuf-lang').':</label>
+                <input name="cuf_telephone'.$n.'" id="cuf_telephone'.$n.'" size="30" value="'.$cuf_telephone.'" class="cuf_field" />
+            </div>
+                ';
 		for ( $x = 1; $x <=5; $x++ )
 		{
 			$i = 'cuf_field_'.$x.$n;
@@ -120,29 +131,40 @@ function showForm( $params = '' )
 				<input name="'.$i.'" id="'.$i.'" size="30" value="'.$cuf_f.'" class="cuf_field" />';
 		}
 		$form .= '
-			<label for="cuf_subject'.$n.'" class="cuf_label">'.__('Message subject', 'cuf-lang').':</label>
-            <select name="cuf_subject'.$n.'" id="cuf_subject'.$n.'" class="cuf_field">
-                <option value="0">
-                    Please select
-                </option>
-                <option value="Product Enquiry">
-                    Product Enquiry
-                </option>
-                <option value="Store Enquiry">
-                    Store Enquiry
-                </option>
-                <option value="Wholesale Enquiry">
-                    Wholesale Enquiry
-                </option>
-                <option value="Product Care">
-                    Product Care
-                </option>
-                <option value="Customer Service">
-                    Customer Service
-                </option>
-            </select>
-			<label for="cuf_msg'.$n.'" class="cuf_label">'.__('Your message', 'cuf-lang').':</label>
-			<textarea name="cuf_msg'.$n.'" id="cuf_msg'.$n.'" class="cuf_textarea" cols="50" rows="7">'.$cuf_msg.'</textarea>
+			<div>
+                <label for="cuf_subject'.$n.'" class="cuf_label">'.__('Message subject', 'cuf-lang').':</label>
+                <select name="cuf_subject'.$n.'" id="cuf_subject'.$n.'" class="cuf_field">
+                    <option value="0">
+                        Please select
+                    </option>
+                    <option value="Product Enquiry">
+                        Product Enquiry
+                    </option>
+                    <option value="Store Enquiry">
+                        Store Enquiry
+                    </option>
+                    <option value="Wholesale Enquiry">
+                        Wholesale Enquiry
+                    </option>
+                    <option value="Product Care">
+                        Product Care
+                    </option>
+                    <option value="Customer Service">
+                        Customer Service
+                    </option>
+                </select>
+            </div>
+			<div>
+			    <label for="cuf_msg'.$n.'" class="cuf_label">'.__('Your message', 'cuf-lang').':</label>
+			    <textarea name="cuf_msg'.$n.'" id="cuf_msg'.$n.'" class="cuf_textarea" cols="50" rows="7">'.$cuf_msg.'</textarea>
+            </div>
+            <div>
+                <label class="cuf_label required-label">'.__('* Required field', 'cuf-lang').':</label>
+            </div>
+            <div>
+                <input name="cuf_newsletter'.$n.'" id="cuf_newsletter'.$n.'" size="30" type="checkbox" checked class="cuf_field" />
+                <label for="cuf_newsletter'.$n.'" class="cuf_label">'.__('Find out about our latest news and exclusive announcements', 'cuf-lang').':</label>
+            </div>
 			';
 		if ( $this->o['captcha'] )
 			$form .= $captcha->getCaptcha($n);
@@ -154,10 +176,9 @@ function showForm( $params = '' )
 			
 		$title = (!empty($this->o['submit'])) ? 'value="'.$this->o['submit'].'"' : '';
 		$form .= '	
-			<input type="submit" name="submit'.$n.'" id="contactsubmit'.$n.'" class="cuf_submit" '.$title.'  onclick="return checkForm(\''.$n.'\');" />
+			<div>
+			    <input type="submit" name="submit'.$n.'" id="contactsubmit'.$n.'" class="cuf_submit" '.$title.'  onclick="return checkForm(\''.$n.'\');" />
 			</div>
-			<div id="kenmorecontent" style="float:right;">
-			<a href="https://www.kenmoredesign.com/" alt="boston web design" title="Web Design Company" target="_blank">web design company</a>
 			</div>
 			<div style="clear:both;"></div>
 			</form>';
@@ -215,7 +236,6 @@ function addScript()
 		else
 			return false
 	}
-	document.getElementById("kenmorecontent").style.visibility = "hidden";
 	</script>
 	';
 	$cuf_script_printed = 1;
@@ -246,7 +266,14 @@ function sendMail( $n = '', $params = '' )
 		$telephone = $_POST['cuf_telephone'.$n];
 		$subject= $this->o['subpre'].' '.$_POST['cuf_subject'.$n];
 		$msg	= $_POST['cuf_msg'.$n];
-		
+		$newsletter	= $_POST['cuf_newsletter'.$n];
+
+		if($newsletter=="on"){
+		    $newsletter = "Yes";
+		} else {
+            $newsletter = "No";
+		}
+
 		$extra = '';
 		foreach ($_POST as $k => $f )
 			if ( strpos( $k, 'cuf_field_') !== false )
@@ -266,6 +293,7 @@ function sendMail( $n = '', $params = '' )
 		"Name: $name\r\n".
 		"Email: $email\r\n".
 		"Telephone: $telephone\r\n".
+		"Subscribe to newsletter: $newsletter\r\n".
 		$extra."\r\n".
 		'Subject: '.$_POST['cuf_subject'.$n]."\r\n\r\n".
 		wordwrap($msg, 76, "\r\n")."\r\n\r\n".
@@ -595,7 +623,6 @@ label[for='cuf_subject'] {
 }
 #cuf_title {
     width: 138px;
-    margin-right: 60px;
 }
 #cuf_title, #cuf_subject {
     height: 24px;
@@ -612,6 +639,25 @@ clear: both;
 	-o-transition:all 200ms linear;
 	transition:all 200ms linear;
 }
+.required-label {
+    color: #666;
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+#tinyform div {
+    clear:both;
+}
+#cuf_newsletter {
+    width: 12px;
+    margin: 5px 10px 32px 0;
+}
+label[for='cuf_newsletter']{
+    width: auto;
+    position: absolute;
+    margin-top: 6px;
+}
 .cuf_textarea {
 	background:#fff;
 	border:1px solid #cccccc;
@@ -619,7 +665,7 @@ clear: both;
 	width:300px;
 	margin-top:5px;
 	outline:none;
-margin-bottom:33px;
+margin-bottom:6px;
 }\n"
 			."</style>\n";
 	}

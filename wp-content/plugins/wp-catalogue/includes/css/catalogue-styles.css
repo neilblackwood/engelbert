@@ -23,6 +23,11 @@
     text-transform: uppercase;
     line-height: 0.77;
 }
+#wpc-product h2 {
+    line-height: 1;
+    margin: 28px 0 31px 0;
+    margin: 2rem 0 2.2142857rem 0;
+}
 #wpc-product h2, #wpc-product h4 {
     text-align: left;
 }

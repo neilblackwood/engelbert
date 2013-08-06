@@ -14,6 +14,18 @@
 			<?php _e( 'Featured post', 'twentytwelve' ); ?>
 		</div>
 		<?php endif; ?>
+		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+		    <?php
+                $img1		=	get_post_meta($post->ID,'product_img1',true);
+                if($img1):
+            ?>
+		    <div>
+            <div class="product-img-view" style="width:235px; height:235px;">
+                <img src="<?php echo $img1; ?>" alt="" id="img1" height="235" width="235" />
+            </div>
+            <div style="float: left;">
+            <?php endif; ?>
+		<?php endif; ?>
 		<header class="entry-header">
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
@@ -23,7 +35,7 @@
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 			<?php endif; // is_single() ?>
-			<?php if ( comments_open() ) : ?>
+			<?php if ( comments_open() && !is_search() ) : ?>
 				<div class="comments-link">
 					<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentytwelve' ) . '</span>', __( '1 Reply', 'twentytwelve' ), __( '% Replies', 'twentytwelve' ) ); ?>
 				</div><!-- .comments-link -->
@@ -34,6 +46,9 @@
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
+		<?php if($img1): ?>
+		    </div></div>
+		<? endif; ?>
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
