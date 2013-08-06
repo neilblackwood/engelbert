@@ -24,9 +24,8 @@ function catalogue() {
 	$terms	=	get_terms('wpccategories',$args1);
 	$count	=	count($terms);
 	$post_content	=	get_queried_object()->post_content;
-	
+
 		if(strpos($post_content,'[wp-catalogue]')!==false){
-		
 		
 		 $siteurl	=	get_bloginfo('siteurl');
 		 global $post;
@@ -48,7 +47,7 @@ function catalogue() {
 	$catalogue_page_url	=	get_option('catalogue_page_url');
 
 		global $post;
-		$terms1 = get_the_terms($post->id, 'wpccategories');
+		$terms1 = get_the_terms($post->ID, 'wpccategories');
 		if($terms1){
 		foreach( $terms1 as $term1 ){
 			$slug	= $term1->slug;
@@ -59,7 +58,7 @@ function catalogue() {
 	}
 
 		if(is_single()){
-			$pname	=	'>> '.get_the_title();	
+			$pname	=	'>> '.get_the_title();
 		}
 		
 		$return_string = '<div id="wpc-catalogue-wrapper">';
@@ -124,19 +123,27 @@ function catalogue() {
 		// 
 		$term_slug	=	get_queried_object()->slug;
 		if($term_slug){
-		$args = array(
-			'post_type'=> 'wpcproduct',
-			'order'     => 'ASC',
-			'orderby'   => 'menu_order',
-			'posts_per_page'	=> $per_page,
-			'paged'	=> $paged,
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'wpccategories',
-					'field' => 'slug',
-					'terms' => get_queried_object()->slug
-				)
-		));
+            if($term_id==5){
+                $args = array();
+                $slug	=   get_queried_object()->slug;
+                $tname	=	get_queried_object()->name;
+                $tdesc	=	get_queried_object()->description;
+                $cat_url	=	get_bloginfo('siteurl').'/kategori/'.$slug;
+            } else {
+                $args = array(
+                    'post_type'=> 'wpcproduct',
+                    'order'     => 'ASC',
+                    'orderby'   => 'menu_order',
+                    'posts_per_page'	=> $per_page,
+                    'paged'	=> $paged,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'wpccategories',
+                            'field' => 'slug',
+                            'terms' => get_queried_object()->slug
+                        )
+                ));
+            }
 		}else{
 			$args = array(
 			'post_type'=> 'wpcproduct',
@@ -148,7 +155,7 @@ function catalogue() {
 		}
 		
 		// products listing
-		$products	=	new WP_Query($args); 
+		$products	=	new WP_Query($args);
 		if($products->have_posts()){
 			$tcropping	=	get_option('tcroping');
 			if(get_option('thumb_height')){
@@ -177,10 +184,14 @@ function catalogue() {
 				$description=	get_post_meta(get_the_id(),'product_description',true);
 				$details    =	get_post_meta(get_the_id(),'product_details',true);
 				$img		=	get_post_meta(get_the_id(),'product_img1',true);
-				$price		=	get_post_meta(get_the_id(),'product_price',true); 
+				$price		=	get_post_meta(get_the_id(),'product_price',true);
+				$class = "";
+				if($i==1){
+				    $class=" first";
+				}
 				 $return_string .= '<!--wpc product-->';
-				 $return_string .= '<div class="wpc-product">';
-				 $return_string .= '<div class="wpc-img" style="width: '. $twidth . 'px; height:' . $theight . 'px; overflow:hidden"><a href="'. $permalink .'" class="wpc-product-link"><img src="'. $img .'" alt="" height="' . $theight . '" width="';
+				 $return_string .= '<div class="wpc-product'.$class.'" style="width: '. $twidth . 'px; overflow:hidden;">';
+				 $return_string .= '<div class="wpc-img" style="width: '. $twidth . 'px; height:' . $theight . 'px; overflow:hidden;"><a href="'. $permalink .'" class="wpc-product-link vignette"><img class="vignette" src="'. $img .'" alt="" height="' . $theight . '" width="';
 				 if(get_option('tcroping') == 'thumb_scale_fit') { $return_string .= $twidth; };
 				 $return_string .= '" /></a></div>';
 				 $return_string .= '<p class="wpc-title"><a href="'. $permalink .'">' . $title . '</a></p>';
@@ -212,7 +223,54 @@ function catalogue() {
 		 $return_string .= '</div>'; 
 		}
 		}else{
-		echo 'No Products';
+			$return_string .= '  <!--col-2-->
+						<div id="wpc-col-2">
+						<div class="entry-content">
+                            <h1>'.$tname.'</h1>
+                            <h3>'.$tdesc.'</h3>
+						</div>
+						<div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
+						</div>
+						<div id="wpc-products">';
+            if($term_id==5){
+			$tcropping	=	get_option('tcroping');
+			if(get_option('thumb_height')){
+			$theight	=	get_option('thumb_height');
+			}else{
+				$theight	=	142;
+			}
+			if(get_option('thumb_width')){
+				$twidth		=	get_option('thumb_width');
+			}else{
+				$twidth		=	205;
+			}
+            $i = 1; // reset counter
+                foreach($terms as $subTerm){
+                    if($subTerm->parent==$term_id){
+                        //$img		=	get_post_meta($subTerm->id,'product_img1',true);
+                        $class = "";
+                        if($i==1){
+                            $class=" first";
+                        }
+                        $return_string .= '<!--wpc category-->';
+                        $return_string .= '<div class="wpc-subcategory'.$class.'" style="width: '. $twidth . 'px; overflow:hidden">';
+                        $return_string .= '<div class="wpc-img" style="width: '. $twidth . 'px; height:' . $theight . 'px; overflow:hidden"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'" class="wpc-product-link vignette"><img class="vignette" src="'. $img .'" alt="" height="' . $theight . '" width="';
+                        if(get_option('tcroping') == 'thumb_scale_fit') { $return_string .= $twidth; };
+                        $return_string .= '" /></a></div>';
+                        $return_string .= '<p class="wpc-title"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->name . '</a></p>';
+                        $return_string .= '<p class="wpc-desc"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->description . '</a></p>';
+                        $return_string .= '</div>';
+                        $return_string .= '<!--/wpc-category-->';
+                        $i++;
+                    }
+                }
+                $i = 0;
+            } else {
+                $return_string .= 'No Products ';
+            }
+            $return_string .= '</div>';
+
+
 		}
 		
 		$return_string .= '</div><div class="clear"></div></div>';

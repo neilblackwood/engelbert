@@ -86,17 +86,41 @@
     padding:7px 0 7px 7px;
 }
 #wpc-col-2 {
-	width: 712px;
+	/*width: 712px;*/
+	width: 724px;
 	float:left;
 }
-.wpc-product {
+.wpc-product, .wpc-subcategory {
 	float: left;
-	margin: 0 15px 27px 0;
+	margin: 0 0 27px 9px;
+	text-align: center;
+}
+#wpc-products div.first {
+    margin-left: 0px;
+    overflow:hidden;
 }
 .wpc-img {
 	margin-bottom: 10px;
 	font-size: 0;
 	padding:17px 0 10px 0;
+}
+.vignette {
+    -webkit-box-shadow: inset 0px 0px 85px rgba(0,0,0,0.05);
+    -moz-box-shadow:    inset 0px 0px 85px rgba(0,0,0,0.05);
+    box-shadow:         inset 0px 0px 85px rgba(0,0,0,0.05);
+    line-height: 0;         /* ensure no space between bottom */
+    display: inline-block;  /* don't go wider than image */
+}
+#wpc-product .vignette {
+    -webkit-box-shadow: inset 0px 0px 85px rgba(0,0,0,0.03);
+    -moz-box-shadow:    inset 0px 0px 85px rgba(0,0,0,0.03);
+    box-shadow:         inset 0px 0px 85px rgba(0,0,0,0.03);
+}
+.vignette img {
+    position: relative;
+    display:inline;
+    line-height: 0;
+    z-index: -1;            /* position beneath */
 }
 .wpc-next-prev {
 }
@@ -105,10 +129,14 @@
 }
 .wpc-img:hover {
 }
-.wpc-img img {
+.wpc-img img, #wpc-product img.vignette {
 	border-radius:0;
 	box-shadow: none;
-	height: 100%;
+    -webkit-transform: scale(1.3);
+    -moz-transform:    scale(1.3);
+    -ms-transform:     scale(1.3);
+    -o-transform:      scale(1.3);
+    transform:         scale(1.3);
 }
 .wpc-title {
 	color: #15845e;
@@ -121,14 +149,16 @@
 	color: #333333;
 	text-decoration:none;
 	display:block;
-	background: url(images/arrow.png) no-repeat right 5px;
 }
 .wpc-title a:hover {
-	color: #15845e;
-	background-position: right -18px;
+	color: #000;
 }
 .wpc-title span {
 	float:right;
+}
+.wpc-desc a {
+    font-size:12px;
+    text-decoration: none;
 }
 .wpc-paginations {
 	clear:both;
