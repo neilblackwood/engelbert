@@ -19,7 +19,8 @@ get_header(); ?>
 			</header>
 
 			<?php twentytwelve_content_nav( 'nav-above' ); ?>
-
+            <?php //Allow multiple results from the serach ?>
+            <?php $posts=query_posts($query_string . '&posts_per_page=-1'); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>

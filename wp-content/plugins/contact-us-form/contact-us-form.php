@@ -179,6 +179,13 @@ function showForm( $params = '' )
 			<div>
 			    <input type="submit" name="submit'.$n.'" id="contactsubmit'.$n.'" class="cuf_submit" '.$title.'  onclick="return checkForm(\''.$n.'\');" />
 			</div>
+            <div class="terms">
+                <p>
+                    Terms & Conditions<br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra fringilla congue. Pellentesque pulvinar <br />
+                    vulputate venenatis. Aliquam non tellus ac tellus molestie tempus. Aenean vulputate scelerisque magna,
+                </p>
+            </div>
 			</div>
 			<div style="clear:both;"></div>
 			</form>';
@@ -526,6 +533,7 @@ function checkInput( $n = '' )
 	$_POST['cuf_email'.$n] = stripslashes(trim($_POST['cuf_email'.$n]));
 	$_POST['cuf_subject'.$n] = stripslashes(trim($_POST['cuf_subject'.$n]));
 	$_POST['cuf_msg'.$n] = stripslashes(trim($_POST['cuf_msg'.$n]));
+	$_POST['cuf_newsletter'.$n] = stripslashes(trim($_POST['cuf_newsletter'.$n]));
 
 	$error = array();
 	if ( empty($_POST['cuf_senderfirst'.$n]) || empty($_POST['cuf_senderlast'.$n]) )
@@ -583,16 +591,17 @@ function addStyle()
 	height: 28px;
 	padding-right: 11px;
 	padding-left: 11px;
+	margin-bottom: 28px;
 	font-size: 9px;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 1px;
 	font-weight: bold;
 	-webkit-transition: background 300ms linear;
--moz-transition: background 300ms linear;
--o-transition: background 300ms linear;
-transition: background 300ms linear;
-text-align:center
+    -moz-transition: background 300ms linear;
+    -o-transition: background 300ms linear;
+    transition: background 300ms linear;
+    text-align:center
 }
 .cuf_label {
     width:100px;
@@ -639,12 +648,16 @@ clear: both;
 	-o-transition:all 200ms linear;
 	transition:all 200ms linear;
 }
-.required-label {
+.required-label, div.terms p {
     color: #666;
     font-size: 9px;
     font-family: Arial, sans-serif;
     margin-bottom: 15px;
     letter-spacing: 1px;
+}
+div.terms p {
+    letter-spacing: normal;
+    width: 500px;
 }
 #tinyform div {
     clear:both;

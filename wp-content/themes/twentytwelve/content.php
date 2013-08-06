@@ -21,7 +21,9 @@
             ?>
 		    <div>
             <div class="product-img-view" style="width:235px; height:235px;">
+                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>">
                 <img src="<?php echo $img1; ?>" alt="" id="img1" height="235" width="235" />
+                </a>
             </div>
             <div style="float: left;">
             <?php endif; ?>
