@@ -873,8 +873,8 @@ article.sticky .featured-post {
 .entry-summary p,
 .comment-content p,
 .mu_register p {
-	margin: 0 0 24px;
-	margin: 0 0 0.714285714rem;
+	margin: 24px 0 24px;
+	margin: 0.714285714rem 0 0.714285714rem;
 	line-height: 1.714285714;
 }
 .entry-content ol,
