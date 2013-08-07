@@ -260,7 +260,7 @@ li.bypostauthor cite span {
 	background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6);
 	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
 }
-label[for="s"] {
+#searchform label {
     background: url(css/images/search-icon.png) no-repeat 2px 4px;
     background-size: 17px 14px;
     position: absolute;
@@ -574,6 +574,12 @@ a:hover {
     margin: 7px 0 0;
     margin: 0.5rem 0 0;
 }
+#main {
+    border-top: 1px solid #ccc;
+}
+.home #main, .home footer {
+    border: none;
+}
 .widget-area {
 	margin: 0 0 54px ;
 	margin: 0 0 3.85715rem;
@@ -587,6 +593,14 @@ a:hover {
 .site-header h1,
 .site-header h2 {
 	text-align: center;
+}
+.site-header h1 {
+    font-size: 26px;
+    font-size: 1.857142857rem;
+    line-height: 1.846153846;
+    margin-bottom: 0;
+    margin: 3px 25.4%;
+    position: absolute;
 }
 .site-header h1 a,
 .site-header h2 a {
@@ -644,6 +658,100 @@ a:hover {
 .menu-toggle {
 	display: inline-block;
 }
+.main-navigation ul.nav-menu,
+.main-navigation div.nav-menu > ul {
+    display: inline-block !important;
+    text-align: left;
+    width: auto;
+    margin: 0 11% 0 13%;
+}
+.main-navigation ul {
+    margin: 0;
+    text-indent: 0;
+    letter-spacing:3px;
+}
+.main-navigation li a,
+.main-navigation li {
+    display: inline-block;
+    text-decoration: none;
+}
+.main-navigation li a {
+    border-bottom: 0;
+    color: #6a6a6a;
+    line-height: 3.692307692;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.main-navigation li a:hover {
+    color: #000;
+}
+.main-navigation li {
+    margin: 0 10px;
+    margin: 0 0.7142857rem;
+    width: 150px;
+    position: relative;
+    text-align: center;
+}
+.main-navigation li.border {
+    width: 108px;
+    width: 7.715rem;
+}
+.main-navigation li hr {
+    color: #d1d1d1;
+    background-color: #d1d1d1;
+    margin:13px;
+}
+.main-navigation li ul {
+    display: none;
+    margin: 0;
+    padding: 11px 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    border: 1px solid #ededed;
+    margin-top:-9px;
+    background-color:white;
+    letter-spacing:2px;
+    margin-left:7px;
+    width: 128px;
+}
+.main-navigation li ul li {
+    width:128px;
+}
+.main-navigation li ul ul {
+    top: 0;
+    left: 100%;
+}
+.main-navigation ul li:hover > ul {
+    display: block;
+}
+.main-navigation li ul li a {
+    background: #fff;
+    /*border-bottom: 1px solid #ededed;*/
+    display: block;
+    font-size: 10px;
+    font-size: 0.74rem;
+    line-height: 2.181818182;
+    padding: 1px 10px;
+    padding: 0.072rem 0.714285714rem;
+    width: 108px;
+    width: 7.715rem;
+    white-space: normal;
+}
+.main-navigation li ul li {
+    margin:0;
+}
+.main-navigation li ul li.parent a {
+    font-size: 11px;
+    font-size: 0.785714286rem;
+    line-height: 1.25;
+    padding: 1px 10px 7px 10px;
+    padding: 0.072rem 0.714285714rem 7px 0.714285714rem;
+}
+.main-navigation li ul li a:hover {
+    color: #000;
+}
+
 
 /* Banner */
 section[role="banner"] {
@@ -725,7 +833,7 @@ section[role="banner"] {
     letter-spacing: 2px;
 }
 /* Footer */
-footer[role="contentinfo"] {
+footer {
     border-top: 1px solid #ccc;
     color: #767676;
 	clear: both;
@@ -1492,6 +1600,10 @@ a.comment-edit-link:hover {
 	margin-left: 12px;
 	margin-left: 0.857142857rem;
 }
+.widget-area {
+    float: right;
+    width: 35.041667%;
+}
 .widget_rss li {
 	margin: 12px 0;
 	margin: 0.857142857rem 0;
@@ -1571,122 +1683,14 @@ img#wpstats {
 		float: left;
 		width: 100%;
 	}
-	#main {
-	    border-top: 1px solid #ccc;
-	}
-	.home #main, .home footer[role="contentinfo"] {
-	    border: none;
-	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
 	body.full-width .site-content {
 		width: 100%;
 	}
-	.widget-area {
-		float: right;
-		width: 35.041667%;
-	}
 	.site-header h1,
 	.site-header h2 {
 		text-align: left;
-	}
-	.site-header h1 {
-		font-size: 26px;
-		font-size: 1.857142857rem;
-		line-height: 1.846153846;
-		margin-bottom: 0;
-        margin: 3px 25.4%;
-        position: absolute;
-	}
-	.main-navigation ul.nav-menu,
-	.main-navigation div.nav-menu > ul {
-		display: inline-block !important;
-		text-align: left;
-        width: auto;
-        margin: 0 11% 0 13%;
-	}
-	.main-navigation ul {
-		margin: 0;
-		text-indent: 0;
-		letter-spacing:3px;
-	}
-	.main-navigation li a,
-	.main-navigation li {
-		display: inline-block;
-		text-decoration: none;
-	}
-	.main-navigation li a {
-		border-bottom: 0;
-		color: #6a6a6a;
-		line-height: 3.692307692;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-	.main-navigation li a:hover {
-		color: #000;
-	}
-	.main-navigation li {
-		margin: 0 10px;
-		margin: 0 0.7142857rem;
-		width: 150px;
-		position: relative;
-		text-align: center;
-    }
-    .main-navigation li.border {
-        width: 108px;
-        width: 7.715rem;
-    }
-    .main-navigation li hr {
-        color: #d1d1d1;
-        background-color: #d1d1d1;
-        margin:13px;
-    }
-	.main-navigation li ul {
-		display: none;
-		margin: 0;
-		padding: 11px 0;
-		position: absolute;
-		top: 100%;
-		z-index: 1;
-        border: 1px solid #ededed;
-        margin-top:-9px;
-        background-color:white;
-        letter-spacing:2px;
-        margin-left:7px;
-        width: 128px;
-	}
-	.main-navigation li ul ul {
-		top: 0;
-		left: 100%;
-	}
-	.main-navigation ul li:hover > ul {
-		display: block;
-	}
-	.main-navigation li ul li a {
-		background: #fff;
-		/*border-bottom: 1px solid #ededed;*/
-		display: block;
-		font-size: 10px;
-		font-size: 0.74rem;
-		line-height: 2.181818182;
-		padding: 1px 10px;
-		padding: 0.072rem 0.714285714rem;
-        width: 108px;
-        width: 7.715rem;
-		white-space: normal;
-	}
-	.main-navigation li ul li {
-	    margin:0;
-	}
-	.main-navigation li ul li.parent a {
-		font-size: 11px;
-		font-size: 0.785714286rem;
-		line-height: 1.25;
-		padding: 1px 10px 7px 10px;
-		padding: 0.072rem 0.714285714rem 7px 0.714285714rem;
-	}
-	.main-navigation li ul li a:hover {
-		color: #000;
 	}
 	.main-navigation .current-menu-item > a,
 	.main-navigation .current-menu-ancestor > a,

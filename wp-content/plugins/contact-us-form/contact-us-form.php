@@ -132,7 +132,7 @@ function showForm( $params = '' )
 		}
 		$form .= '
 			<div>
-                <label for="cuf_subject'.$n.'" class="cuf_label">'.__('Message subject', 'cuf-lang').':</label>
+                <label for="cuf_subject'.$n.'" class="cuf_label cuf_subject">'.__('Message subject', 'cuf-lang').':</label>
                 <select name="cuf_subject'.$n.'" id="cuf_subject'.$n.'" class="cuf_field">
                     <option value="0">
                         Please select
@@ -155,7 +155,7 @@ function showForm( $params = '' )
                 </select>
             </div>
 			<div>
-			    <label for="cuf_msg'.$n.'" class="cuf_label">'.__('Your message', 'cuf-lang').':</label>
+			    <label for="cuf_msg'.$n.'" class="cuf_label cuf_msg">'.__('Your message', 'cuf-lang').':</label>
 			    <textarea name="cuf_msg'.$n.'" id="cuf_msg'.$n.'" class="cuf_textarea" cols="50" rows="7">'.$cuf_msg.'</textarea>
             </div>
             <div>
@@ -163,7 +163,7 @@ function showForm( $params = '' )
             </div>
             <div>
                 <input name="cuf_newsletter'.$n.'" id="cuf_newsletter'.$n.'" size="30" type="checkbox" checked class="cuf_field" />
-                <label for="cuf_newsletter'.$n.'" class="cuf_label">'.__('Find out about our latest news and exclusive announcements', 'cuf-lang').':</label>
+                <label for="cuf_newsletter'.$n.'" class="cuf_label cuf_newsletter">'.__('Find out about our latest news and exclusive announcements', 'cuf-lang').':</label>
             </div>
 			';
 		if ( $this->o['captcha'] )
@@ -621,9 +621,11 @@ function addStyle()
 	outline:none
 	float:left;
 }
-label[for='cuf_subject'] {
-    margin-top:18px;
+label.cuf_subject, label.cuf_msg {
     width:100%;
+}
+label.cuf_subject {
+    margin-top:18px;
 }
 #cuf_subject {
     width:238px;
@@ -666,7 +668,7 @@ div.terms p {
     width: 12px;
     margin: 5px 10px 32px 0;
 }
-label[for='cuf_newsletter']{
+label.cuf_newsletter {
     width: auto;
     position: absolute;
     margin-top: 6px;

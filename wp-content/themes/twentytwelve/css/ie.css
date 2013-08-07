@@ -49,8 +49,6 @@ img[class*="attachment-"] {
 	padding: 0 40px;
 }
 .site-content {
-	float: left;
-	width: 65.104166667%;
 }
 body.template-front-page .site-content,
 body.single-attachment .site-content,
@@ -59,7 +57,7 @@ body.full-width .site-content {
 }
 .widget-area {
 	float: right;
-	width: 26.041666667%;
+	width: 35.041667%;
 }
 .site-header h1,
 .site-header h2 {
@@ -68,18 +66,15 @@ body.full-width .site-content {
 .site-header h1 {
 	font-size: 26px;
 	line-height: 1.846153846;
+	margin: 3px 30%;
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
-	border-bottom: 1px solid #ededed;
-	border-top: 1px solid #ededed;
 	display: inline-block !important;
 	text-align: left;
 	width: 100%;
 }
 .main-navigation ul {
-	margin: 0;
-	text-indent: 0;
 }
 .main-navigation li a,
 .main-navigation li {
@@ -100,16 +95,9 @@ body.full-width .site-content {
 	color: #000;
 }
 .main-navigation li {
-	margin: 0 40px 0 0;
 	position: relative;
 }
 .main-navigation li ul {
-	display: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: 100%;
-	z-index: 1;
 }
 .ie7 .main-navigation li ul {
 	left: 0;
@@ -120,21 +108,11 @@ body.full-width .site-content {
 	left: 100%;
 }
 .main-navigation ul li:hover > ul {
-	border-left: 0;
 	display: block;
 }
 .main-navigation li ul li a {
-	background: #efefef;
-	border-bottom: 1px solid #ededed;
-	display: block;
-	font-size: 11px;
-	line-height: 2.181818182;
-	padding: 8px 10px;
-	width: 180px;
 }
 .main-navigation li ul li a:hover {
-	background: #e3e3e3;
-	color: #444;
 }
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a,
@@ -240,4 +218,8 @@ body.full-width .site-content {
 .ie7 .rtl .main-navigation li ul ul ul {
 	position: relative;
 	z-index: 1;
+}
+
+#searchform label {
+    background: url(images/search-icon-small.png) no-repeat 2px 4px;
 }
