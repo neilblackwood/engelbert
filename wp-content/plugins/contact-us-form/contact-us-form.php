@@ -651,7 +651,7 @@ clear: both;
 	transition:all 200ms linear;
 }
 .required-label, div.terms p {
-    color: #666;
+    color: #888;
     font-size: 9px;
     font-family: Arial, sans-serif;
     margin-bottom: 15px;

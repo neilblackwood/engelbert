@@ -173,9 +173,14 @@ function catalogue() {
 			$return_string .= '  <!--col-2-->
 						<div id="wpc-col-2">
 						<div class="entry-content">
-                            <h1>'.$tname.'</h1>
-                            <h3>'.$tdesc.'</h3>
-						</div>
+                            <h1>'.$tname.'</h1>';
+                            if(strlen($tdesc)>50){
+            $return_string .= '<p class="wp-desc">'.$tdesc.'</p>';
+                            } else {
+            $return_string .= '<h3>'.$tdesc.'</h3>';
+                            }
+
+			$return_string .= '</div>
 						<div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
 						</div>
 						<div id="wpc-products">';
@@ -238,15 +243,18 @@ function catalogue() {
             }
 			$return_string .= '<!--col-2-->
 						<div id="wpc-col-2">
-						<div class="entry-content">
+						<div class="entry-content category-list">
                             <h1>'.$tname.'</h1>';
                             if($term_id==5){
-            $return_string .= '<h3>'.$tdesc.'</h3>
-                        </div><div style="width:20px;border-bottom:1px solid black; margin:0 auto;"></div>';
+                            if(strlen($tdesc)>50){
+            $return_string .= '<p class="wp-desc">'.$tdesc.'</p></div>';
+                            } else {
+            $return_string .= '<h3>'.$tdesc.'</h3>';
+                            }
+            $return_string .= '</div><div style="width:20px;border-bottom:1px solid black; margin:0 auto;"></div><div id="wpc-products">';
                             } else {
             $return_string .= '<p class="wp-desc">'.$tdesc.'</p></div>';
                             }
-			$return_string .= '<div id="wpc-products">';
             if($term_id==5){
                 $i = 0; // reset counter
                 foreach($terms as $subTerm){
@@ -261,14 +269,16 @@ function catalogue() {
                         $return_string .= '<div class="wpc-img" style="width: '. $twidth . 'px; height:' . $theight . 'px; overflow:hidden"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'" class="wpc-product-link vignette"><img class="vignette" src="'. $img .'" alt="" height="' . $theight . '" width="';
                         if(get_option('tcroping') == 'thumb_scale_fit') { $return_string .= $twidth; };
                         $return_string .= '" /></a></div>';
-                        $return_string .= '<p class="wpc-title"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->name . '</a></p>';
-                        $return_string .= '<p class="wpc-desc"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->description . '</a></p>';
+                        $return_string .= '<p class="wpc-cat-title"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->name . '</a></p>';
+                        $return_string .= '<p class="wpc-desc">' . $subTerm->description . '</p>';
                         $return_string .= '</div>';
                         $return_string .= '<!--/wpc-category-->';
                         $i++;
                     }
                 }
             } else {
+                $return_string .= '<div id="wpc-products">';
+                $j = 0;
                 foreach($terms as $subTerm){
                     if($subTerm->parent==$term_id){
 
@@ -288,13 +298,17 @@ function catalogue() {
                         // products listing
                         $products	=	new WP_Query($args);
                         if($products->have_posts()){
-                            $i = 0;
-                            $return_string .= '<div class="entry-content">
+
+                            $class="";
+                            if($j == 0){
+                                $class=" first-cat";
+                            }
+                            $return_string .= '<div class="entry-content category'.$class.'">
                                 <h3>'.$subTerm->name.'</h3>
                                 </div>
                                 <div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
                                 </div>
-                                <div id="wpc-products">';
+                                ';
                         while($products->have_posts()): $products->the_post();
                             $title		=	get_the_title();
                             $permalink	=	get_permalink();

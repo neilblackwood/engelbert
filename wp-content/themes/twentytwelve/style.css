@@ -579,16 +579,24 @@ a:hover {
 }
 .home #main, .home footer {
     border: none;
+    margin-top: 14px;
+    margin-top: 1rem;
+}
+.home #main {
+    margin-top:0;
+}
+.home .site-content {
+    margin-top:0;
 }
 .widget-area {
-	margin: 0 0 54px ;
-	margin: 0 0 3.85715rem;
+	margin: 0 0 60px;
+	margin: 0 0 4.7142855rem;
 }
 
 /* Header */
 .site-header {
-	padding: 24px 0 0;
-	padding: 1.714285714rem 0 0;
+	padding: 12px 0 0;
+	padding: 0.858rem 0 0;
 }
 .site-header h1,
 .site-header h2 {
@@ -599,7 +607,7 @@ a:hover {
     font-size: 1.857142857rem;
     line-height: 1.846153846;
     margin-bottom: 0;
-    margin: 3px 25.4%;
+    margin: 15px 25.4%;
     position: absolute;
 }
 .site-header h1 a,
@@ -818,19 +826,23 @@ section[role="banner"] {
     outline: none;
 	/*width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
 }
-#searchsubmit {
-    border: none;
-    width: 50px;
-    padding: 0;
-    margin-right: 10px;
-    background: none;
-    text-align: left;
-}
 .widget-area #s, #searchsubmit {
     margin: 0;
     float: left;
     height:14px;
     letter-spacing: 2px;
+}
+.widget_bogo_language_switcher {
+    border-left: 1px solid #b2b2b2;
+    height: 12px;
+}
+#searchsubmit {
+    border: none;
+    width: 50px;
+    padding: 0;
+    margin-right: 13px;
+    background: none;
+    text-align: left;
 }
 /* Footer */
 footer {
@@ -841,6 +853,8 @@ footer {
 	font-size: 0.5rem;
     font-family: Arial, sans-serif;
 	line-height: 2;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 	max-width: 960px;
 	max-width: 68.571428571rem;
 	margin-top: 24px;
@@ -938,8 +952,8 @@ article.sticky .featured-post {
 }
 .entry-content h1,
 .comment-content h1 {
-    font-size: 34px;
-    font-size: 2.45rem;
+    font-size: 36px;
+    font-size: 2.55rem;
 	line-height: 1.5;
 	font-weight:normal;
 }
@@ -955,7 +969,7 @@ article.sticky .featured-post {
 .comment-content h3 {
     font-size: 20px;
     font-size: 1.45rem;
-	line-height: 1.846153846;
+	line-height: 1;
 	font-weight: normal;
 }
 .entry-content h4,
@@ -984,6 +998,14 @@ article.sticky .featured-post {
 	margin: 24px 0 24px;
 	margin: 0.714285714rem 0 0.714285714rem;
 	line-height: 1.714285714;
+}
+#wpc-col-2 .entry-content p {
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	line-height: 1.6;
+	text-align: center;
+	margin: 7px 21px 7px;
+	margin: 0.5rem 1.5rem 0.5rem;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1082,7 +1104,6 @@ article.sticky .featured-post {
 #contactUs{
     width:350px;
     float: left;
-    letter-spacing: 1px;
 }
 #leftCol p, #contactUs, #storeTabsWrapper table, #storeTabsWrapper p, #storeTabsWrapper strong {
     margin: 0;
@@ -1602,7 +1623,7 @@ a.comment-edit-link:hover {
 }
 .widget-area {
     float: right;
-    width: 35.041667%;
+    width: 37%;
 }
 .widget_rss li {
 	margin: 12px 0;

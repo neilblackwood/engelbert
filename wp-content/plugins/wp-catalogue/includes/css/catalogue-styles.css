@@ -7,7 +7,7 @@
     font-family: Arial, sans-serif;
     color: white;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin: 20px 0;
     text-transform: uppercase;
     background-color:black;
     padding:8px;
@@ -23,6 +23,7 @@
 #wpc-catalogue-wrapper h1 {
     text-transform: uppercase;
     line-height: 0.77;
+    letter-spacing: 2px;
 }
 #wpc-product h2 {
     line-height: 1;
@@ -31,6 +32,10 @@
 }
 #wpc-product h2, #wpc-product h4 {
     text-align: left;
+}
+#wpc-product h4 {
+    margin-top: 0;
+    line-height: 1;
 }
 #wpc-col-1 {
 	width:161px;
@@ -64,7 +69,7 @@
 }
 #wpc-col-1 ul li a {
 	display:block;
-	color:#666666;
+	color:#989898;
 	font-size:10px;
 	text-decoration:none;
 	padding:7px 30px 7px 0px;
@@ -75,9 +80,13 @@
     font-size:12px;
     padding:11px 30px 11px 0px;
 }
-#wpc-col-1 ul li a:hover, #wpc-col-1 ul li.active-wpc-cat a {
+#wpc-col-1 ul li a:hover, #wpc-col-1 ul li.active-wpc-cat a, #wpc-col-1 li.active-wpc-cat ul a:hover {
 	border-right:none;
 	color:#000000;
+}
+#wpc-col-1 li.active-wpc-cat ul a {
+	border-right:none;
+	color:#989898;
 }
 #wpc-col-1 ul li.first a {
     padding-top:0;
@@ -92,17 +101,22 @@
 }
 .wpc-product, .wpc-subcategory {
 	float: left;
-	margin: 0 0 27px 9px;
+	margin: 0 0 12px 9px;
 	text-align: center;
+}
+.wpc-subcategory {
+    margin-bottom: 36px;
+}
+#wpc-products {
+    margin-top:14px;
 }
 #wpc-products div.first {
     margin-left: 0px;
     overflow:hidden;
 }
 .wpc-img {
-	margin-bottom: 10px;
 	font-size: 0;
-	padding:17px 0 10px 0;
+	padding:17px 0 6px 0;
 }
 .vignette {
     -webkit-box-shadow: inset 0px 0px 85px rgba(0,0,0,0.05);
@@ -140,12 +154,20 @@
 }
 .wpc-title {
 	color: #15845e;
-	padding: 0 7px 20px;
+	padding: 0 7px 0;
 	line-height: inherit;
 	margin: 0;
 }
+.wpc-cat-title a {
+	font-size: 16px;
+	color: #333333;
+	text-decoration:none;
+	display:block;
+	padding: 10px 0 7px;
+}
 .wpc-title a {
-	font-size: 14px;
+	font-size: 12px;
+	line-height: 1.5;
 	color: #333333;
 	text-decoration:none;
 	display:block;
@@ -156,9 +178,12 @@
 .wpc-title span {
 	float:right;
 }
-.wpc-desc a {
+.wpc-desc {
     font-size:12px;
+    line-height: 18px;
     text-decoration: none;
+    width: 85%;
+    margin: 0 auto;
 }
 .wpc-paginations {
 	clear:both;
@@ -210,7 +235,7 @@
     width:300px;
 }
 #tabs {
-    height:141px;
+    height:131px;
 }
 .entry-content h4 a {
     color: #666666;
@@ -233,4 +258,20 @@
 }
 .entry-content img {
 	max-width: inherit !important; /* Fluid images for posts, comments, and widgets */
+}
+div.entry-content {
+    margin-bottom: 11px;
+}
+#wpc-products div.category {
+    margin-bottom: 11px;
+    margin-top: 52px;
+    display: inline-block;
+    width: 100%;
+}
+#wpc-products div.first-cat, {
+    margin-top: 0;
+}
+}
+div.category-list {
+    margin-bottom: 54px;
 }
