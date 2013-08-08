@@ -38,10 +38,6 @@ get_header(); ?>
 					<h1 class="entry-title"><?php _e( 'No posts to display', 'twentytwelve' ); ?></h1>
 				</header>
 
-				<div class="entry-content">
-					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'twentytwelve' ), admin_url( 'post-new.php' ) ); ?></p>
-				</div><!-- .entry-content -->
-
 			<?php else :
 				// Show the default message to everyone else.
 			?>
