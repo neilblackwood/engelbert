@@ -13,6 +13,7 @@
     padding:8px;
     text-align: center;
     width: 180px;
+    letter-spacing: 2px;
 }
 #wpc-catalogue-wrapper h1,
 #wpc-catalogue-wrapper h3 {
@@ -36,6 +37,7 @@
 #wpc-product h4 {
     margin-top: 0;
     line-height: 1;
+    letter-spacing: 1px;
 }
 #wpc-col-1 {
 	width:161px;

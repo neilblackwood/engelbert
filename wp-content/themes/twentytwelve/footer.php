@@ -14,9 +14,7 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
-			<p class="alignleft">&copy; 2013 Engelbert Stockholm</p>
-			<p style="margin: 0 19%; float: left;">Box 38300, 100 64 Stockholm, Sverige</p>
-			<p class="alignright">+46 (0)8 84 09 55</p>
+			<p style="margin: 0 0 0 385px;">&copy; 2013 Engelbert Stockholm</p>
 			<?php /* <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a> */ ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
