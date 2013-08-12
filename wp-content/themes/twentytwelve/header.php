@@ -91,7 +91,11 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
                 display: none;
             }
 </style>
-
+    <script>
+    $(function() {
+    $( "#tabs, #storeTabs" ).tabs();
+    });
+    </script>
 <?php
     //Needs moving out into enqueue script at some point
     if ($wp->query_vars["post_type"] == 'wpcproduct') {

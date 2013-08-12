@@ -174,6 +174,25 @@ function jquery_cdn() {
    }
 add_action('init', 'jquery_cdn');
 
+
+function my_search_form( $form ) {
+
+	$form = '<form role="search" method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" >
+	<div class="field-search">
+	<label for="s">' . __('Search for:') . '</label>
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
+	</div>
+	<div style="float: left;">
+	<input type="submit" id="searchsubmit" value="SEARCH" />
+	</div>
+	</form>';
+
+
+    return $form;
+}
+
+add_filter( 'get_search_form', 'my_search_form' );
+
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.

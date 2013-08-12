@@ -60,6 +60,7 @@
         };
 
         $('#searchform').submit(function(c){
+            console.log('submitting');
             if(!$('.widget-area div.field-search').hasClass("field-search-active")){
                 c.preventDefault();
                 showSearch($('.widget-area div.field-search'))
