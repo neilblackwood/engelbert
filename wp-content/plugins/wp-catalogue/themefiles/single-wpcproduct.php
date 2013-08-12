@@ -92,6 +92,36 @@
         <img class="vignette" src="<?php echo $img3; ?>" alt="" id="img3" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;"  />
         </div>
         <div class="clear"></div>
+
+          <script>
+          $(function() {
+            $( "#dialog" ).dialog({
+              height: 940,
+              width: 940,
+              top: 0,
+              autoOpen: false,
+              show: {
+                duration: 250
+              },
+              hide: {
+                duration: 125
+              },
+              position: 'top'
+            });
+
+            $( "#opener" ).click(function() {
+                $('.product-img-view img').each(function() {
+                    if($(this).css('display')=='inline'){
+                        //Create the popup
+                        $( "#dialog" ).html("<img width='940' height='940' src='"+$(this).attr('src')+"' />");
+                    };
+                });
+              $( "#dialog" ).dialog( "open" );
+            });
+          });
+          </script>
+        <h5><a href="#" id="opener">View Image in Full Size</a></h5>
+        <div id="dialog"></div>
         </div>
         <?php $product_description = get_post_meta($post->ID, 'product_description', true); ?>
         <?php $product_details = get_post_meta($post->ID, 'product_details', true); ?>
@@ -142,7 +172,7 @@
         <?php endwhile; endif; ?>
         </div>
         <!--/col-2-->
-    <div class="clear"></div>    
+    <div class="clear"></div>
     </div>
 <?php echo get_option('inn_temp_foot'); ?>
   <!--/Content-->

@@ -15,6 +15,15 @@
     width: 180px;
     letter-spacing: 2px;
 }
+#wpc-product-gallery h5 {
+    color: black;
+    background-color: transparent;
+    font-weight: normal;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+    padding: 10px 0 0;
+}
 #wpc-catalogue-wrapper h1,
 #wpc-catalogue-wrapper h3 {
     margin:0 auto;
@@ -42,7 +51,7 @@
 #wpc-col-1 {
 	width:161px;
 	float:left;
-	margin: 0 55px 0 0;
+	margin: 0 50px 0 0;
 	line-height: inherit;
 }
 #wpc-col-1 ul {
@@ -98,6 +107,7 @@
 }
 #wpc-col-2 {
 	/*width: 712px;*/
+
 	width: 724px;
 	float:left;
 }
@@ -229,8 +239,11 @@
 	cursor: pointer;
 }
 #wpc-product-gallery {
-	padding: 0 0 20px;
+	padding: 0;
 	float:left;
+}
+#wpc-product-gallery a {
+    text-decoration: none;
 }
 #wpc-product .post {
     float:right;
@@ -276,4 +289,82 @@ div.entry-content {
 }
 div.category-list {
     margin-bottom: 54px;
+}
+
+/* Dialog styling */
+
+#dialog {
+    overflow: hidden;
+    height:940px;
+    width:940px;
+}
+.ui-dialog {
+	position: absolute;
+	top: 0 !important;
+	left: 0;
+	padding: 0;
+	outline: 0;
+}
+.ui-dialog .ui-dialog-titlebar {
+    padding: .4em 1em;
+    position: relative;
+    margin-top: 65px;
+    border: 0 none;
+    width: 14px;
+    float: right;
+}
+.ui-dialog .ui-dialog-title {
+	float: left;
+	margin: .1em 0;
+	white-space: nowrap;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	position: absolute;
+	right: .3em;
+	top: 50%;
+	width: 21px;
+	margin: -10px 0 0 0;
+	padding: 1px;
+	height: 20px;
+    background-color: white;
+    border: none !important;
+    background: #fff url(images/close.png) 50% 50% repeat-x !important;
+    outline: none;
+}
+.ui-dialog  .ui-state-default .ui-icon {
+    background-image: none;
+}
+.ui-dialog  .ui-state-default .ui-button-text {
+    color: white;
+}
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: auto;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
+.ui-dialog .ui-resizable-se {
+	width: 12px;
+	height: 12px;
+	right: -5px;
+	bottom: -5px;
+	background-position: 16px 16px;
 }
