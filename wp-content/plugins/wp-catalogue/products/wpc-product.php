@@ -152,6 +152,7 @@ function my_edit_wpcproduct_columns( $columns ) {
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Title' ),
+		'locale' => __( 'Locale', 'bogo' ),
 		'wpccategories' => __( '<a href="javascript:;">Category</a>' ),
 		'date' => __( 'Date' )
 	);
