@@ -365,7 +365,7 @@ function your_custom_menu_item ( $items, $args ) {
         );
         $categories = get_terms('wpccategories',$args1);
 
-        $categories_menu = '<li class="first"><a href="#" onclick="return false;">Produkter</a><ul>';
+        $categories_menu = '<li><a href="#" onclick="return false;">Produkter</a><ul>';
         foreach($categories as $category){
             //Limit to the top categories
             if($category->parent == 0){

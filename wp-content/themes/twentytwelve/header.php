@@ -32,11 +32,6 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui-1.10.3.custom.min.css" />
 <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.07016.js"></script>
-<script>
-$(function() {
-$( "#tabs, #storeTabs" ).tabs();
-});
-</script>
 <style type="text/css">
 /*
 This CSS resource incorporates links to font software which is the valuable copyrighted
@@ -96,6 +91,44 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
                 display: none;
             }
 </style>
+
+<?php
+    //Needs moving out into enqueue script at some point
+    if ($wp->query_vars["post_type"] == 'wpcproduct') {
+?>
+    <script>
+    $(function() {
+    $( "#tabs, #storeTabs" ).tabs();
+    });
+
+    $(function() {
+        $( "#dialog" ).dialog({
+            height: 940,
+            width: 940,
+            top: 0,
+            autoOpen: false,
+            show: {
+                duration: 250
+            },
+            hide: {
+                duration: 125
+            },
+            position: 'top'
+        });
+
+        $( "#opener" ).click(function() {
+            $('.product-img-view img').each(function() {
+                if($(this).css('display')=='inline'){
+                    //Create the popup
+                    $( "#dialog" ).html("<img width='940' height='940' src='"+$(this).attr('src')+"' />");
+                };
+            });
+          $( "#dialog" ).dialog( "open" );
+        });
+    });
+    </script>
+<?php  } ?>
+
 </head>
 
 <body <?php body_class(); ?>>
