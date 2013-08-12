@@ -383,9 +383,11 @@ video {
 .alignleft {
 	float: left;
 }
-.site-info p.alignleft {
+.site-info p {
     background: url(css/images/engelbert-icon.png) no-repeat right 3px;
     padding-right: 19px;
+    display: inline;
+    padding: 4px 19px 4px 0;
 }
 .alignright {
 	float: right;
@@ -871,8 +873,8 @@ footer {
 	margin-top: 1.714285714rem;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 5px 0 23px 0;
-	padding: 0.358rem 0 1.643rem 0;
+    padding: 5px 0 5px 0;
+    padding: 0.358rem 0 0.358rem 0;
 }
 footer[role="contentinfo"] a {
 	color: #686868;
@@ -1165,7 +1167,11 @@ article.sticky .featured-post {
     width:559px;
 }
 #aboutImages {
-    width: 375px;
+    width: 361px;
+    padding-left: 20px;
+}
+#aboutImages img {
+    margin-bottom: 55px;
 }
 img.alignleft {
 	margin: 12px 24px 12px 0;
