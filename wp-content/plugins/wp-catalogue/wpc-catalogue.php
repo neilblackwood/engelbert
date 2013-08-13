@@ -330,8 +330,8 @@ function catalogue() {
                              $return_string .= '<!--/wpc-product-->';
                             if($i == get_option('grid_rows'))
                         {
-                            $return_string .= '<br clear="all" />';
-                            $i = 0; // reset counter
+                            //$return_string .= '<br clear="all" />';
+                            //$i = 0; // reset counter
                         }
                             $i++;
                             $j++;
