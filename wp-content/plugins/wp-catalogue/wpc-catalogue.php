@@ -336,6 +336,7 @@ function catalogue() {
                             $i++;
                             $j++;
                         endwhile; wp_reset_postdata;
+                        $i = 0; // reset counter
                         }
                     }
                 }
