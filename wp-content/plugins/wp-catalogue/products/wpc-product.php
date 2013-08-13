@@ -22,6 +22,7 @@ function wpt_wpcproduct_posttype() {
             'supports' => array( 'title','editor'),
             'capability_type' => 'post',
             'rewrite' => array("slug" => "produkter"), // Permalinks format
+            //'rewrite' => array('slug' => ( (get_locale()=='en_US') ? 'product':'produkter' ) ),
             'menu_position' => 121,
             'register_meta_box_cb' => 'add_wpcproduct_metaboxes',
         )
@@ -146,6 +147,16 @@ $labels = array(
     'rewrite' => array( 'slug' => 'kategori', 'with_front' => false ),
   ));
 } 
+
+/* could be a more efficient way of doing this, but allows multiple languages in the WP catalogue plugin */
+function add_rules($wp_rewrite) {
+    $new_rules = array(
+        'en/produkter/([^/]+)/?$' => 'index.php?wpcproduct=' . $wp_rewrite->preg_index(1) . '&lang=en',
+        'en/kategori/([^/]+)/?$' => 'index.php?wpccategories=' . $wp_rewrite->preg_index(1) . '&lang=en'
+    );
+    $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
+}
+add_filter('generate_rewrite_rules', 'add_rules');
 
 add_filter( 'manage_edit-wpcproduct_columns', 'my_edit_wpcproduct_columns' ) ;
 function my_edit_wpcproduct_columns( $columns ) {

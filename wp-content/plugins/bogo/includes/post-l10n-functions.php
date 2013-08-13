@@ -10,7 +10,7 @@ function bogo_get_post_locale( $post_id ) {
 }
 
 function bogo_localizable_post_types() {
-	$localizable = array( 'post', 'page', 'wpcproduct');
+	$localizable = array( 'post', 'page', 'wpcproduct', 'wpccategories');
 
 	return apply_filters( 'bogo_localizable_post_types', $localizable );
 }
