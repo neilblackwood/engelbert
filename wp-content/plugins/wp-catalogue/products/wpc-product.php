@@ -3,6 +3,10 @@
 //////// Advance custom post type
 
 function wpt_wpcproduct_posttype() {
+    // Define the permalink structure here
+    global $permaProductSlug;
+    global $permaCategorySlug;
+    $permaProductSlug = 'produkter';
     register_post_type( 'wpcproduct',
 		 array(
 			'labels' => array(
@@ -21,8 +25,7 @@ function wpt_wpcproduct_posttype() {
 			'menu_icon' => WP_CATALOGUE.'/images/shopping-basket.png',  // Icon Path
             'supports' => array( 'title','editor'),
             'capability_type' => 'post',
-            'rewrite' => array("slug" => "produkter"), // Permalinks format
-            //'rewrite' => array('slug' => ( (get_locale()=='en_US') ? 'product':'produkter' ) ),
+            'rewrite' => array("slug" => $permaProductSlug), // Permalinks format
             'menu_position' => 121,
             'register_meta_box_cb' => 'add_wpcproduct_metaboxes',
         )
@@ -124,8 +127,6 @@ function wpt_save_wpcproduct_meta($post_id, $post) {
 add_action('save_post', 'wpt_save_wpcproduct_meta', 1, 2); // save the custom fields
 add_action('init','create_wpcproduct_taxonomies',0);
 function create_wpcproduct_taxonomies(){
-
-
 $labels = array( 
     'name' => _x( 'Categories', 'taxonomy general name' ),
     'singular_name' => _x( 'Categories', 'taxonomy singular name' ),
@@ -138,21 +139,25 @@ $labels = array(
     'add_new_item' => __( 'Add New Categories' ),
     'new_item_name' => __( 'New Categories Name' ),
     'menu_name' => __( 'Categories' ),
- ); 	
+ );
+$permaCategorySlug = 'kategori';
   register_taxonomy('wpccategories',array('wpcproduct'), array(
 	'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'kategori', 'with_front' => false ),
+    'rewrite' => array( 'slug' => $permaCategorySlug, 'with_front' => false ),
   ));
 } 
 
 /* could be a more efficient way of doing this, but allows multiple languages in the WP catalogue plugin */
 function add_rules($wp_rewrite) {
+    $permaProductSlug = 'produkter';
+    $permaCategorySlug = 'kategori';
+
     $new_rules = array(
-        'en/produkter/([^/]+)/?$' => 'index.php?wpcproduct=' . $wp_rewrite->preg_index(1) . '&lang=en',
-        'en/kategori/([^/]+)/?$' => 'index.php?wpccategories=' . $wp_rewrite->preg_index(1) . '&lang=en'
+        'en/'.$permaProductSlug.'/([^/]+)/?$' => 'index.php?wpcproduct=' . $wp_rewrite->preg_index(1) . '&lang=en',
+        'en/'.$permaCategorySlug.'/([^/]+)/?$' => 'index.php?wpccategories=' . $wp_rewrite->preg_index(1) . '&lang=en'
     );
     $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 }
