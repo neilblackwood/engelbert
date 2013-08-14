@@ -199,25 +199,28 @@
 }
 .wpc-paginations {
 	clear:both;
-	padding:0 0 0 7px;
+	padding:80px 0 0 7px;
+	float: right;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+.wpc-paginations span {
+    margin-right:5px;
 }
 .product-price {
 }
 .wpc-paginations a {
 	display:block;
-	width:30px;
-	height:30px;
-	background:url(images/pagination-bg.gif) no-repeat top;
-	float:left;
+	float:right;
 	text-align:center;
-	line-height:30px;
-	color:#FFF;
+	color:#666;
 	text-decoration:none;
-	margin:0 2px;
+	margin:0 0 0 5px;
+	letter-spacing: 2px;
 }
 .wpc-paginations a:hover, .wpc-paginations .active-wpc-page {
-	background-position:bottom;
-	color:#FFF;
+	color:black;
 }
 .product-img-view {
 	float:left;

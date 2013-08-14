@@ -220,14 +220,21 @@ function catalogue() {
 		
 			if($pages>1){
 			$return_string .= '<div class="wpc-paginations">';
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			for($p=1; $p<=$pages; $p++){
 				$cpage	=	'active-wpc-page';
 				if($paged==$p){
-						$return_string .=    '<a href="' . $crrurl . '/page/'. $p .'" class="pagination-number '. $cpage .'">'. $p .'</a>';
-					}else{
-						$return_string .=    '<a href="' . $crrurl . '/page/'. $p .'" class="pagination-number">'. $p .'</a>';	
-					}
+			        $return_string .=  '<span>Page ' . $p  . ' of ' . $pages . '</span>';
+			        $next = $p+1;
+			        $previous = $p-1;
+			        if($p!=$pages){
+			            $return_string .=  '<a href="' . $crrurl . '/page/'. $next .'" class="pagination-number">NEXT</a>';
+			        }
+			        if($p!=1){
+			            $return_string .=  '<a href="' . $crrurl . '/page/'. $previous .'" class="pagination-number">PREV</a>';
+			        }
+
+                }
 		}
 		 $return_string .= '</div>'; 
 		}
@@ -258,10 +265,20 @@ function catalogue() {
             $return_string .= '<p class="wp-desc">'.$tdesc.'</p></div>';
                             }
             if($term_id==5){
+
+            $imgArray = array(
+                'allians-fadenfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Faden-5205-50F.jpg',
+                'allians-krabbfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Krab-9105-120E.jpg',
+                'allians-kanalfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Kanal-5705-55F.jpg',
+                'allians-stavfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/23-9305-35N.jpg',
+                'allians-essfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Essfa-9303-27E.jpg',
+                'allians-pavefattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Pave-3535-70HR.jpg'
+            );
+
                 $i = 0; // reset counter
                 foreach($terms as $subTerm){
                     if($subTerm->parent==$term_id){
-                        //$img		=	get_post_meta($subTerm->id,'product_img1',true);
+                        $img = $imgArray[$subTerm->slug];
                         $class = "";
                         if($i % 3 == 0){
                             $class=" first";
