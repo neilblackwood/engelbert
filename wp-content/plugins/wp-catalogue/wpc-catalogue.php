@@ -5,11 +5,12 @@ function catalogue() {
 	global $post, $categories, $args1;
 	$post_data = get_post($post->ID, ARRAY_A);
 	if(get_queried_object()->taxonomy){
-		$slug	=	get_queried_object()->taxonomy.'/'.get_queried_object()->slug;
+		//$slug	=	get_queried_object()->taxonomy.'/'.get_queried_object()->slug;
+		$slug	=	get_queried_object()->slug;
 	}else{
 		$slug = $post_data['post_name'];
 	}
-	$crrurl	=	get_bloginfo('wpurl').'/'.$slug;
+	$crrurl	=	get_bloginfo('siteurl').'/kategori/'.$slug;
 	if(get_query_var('paged')){
 		$paged	=	get_query_var('paged');	
 	}else{
