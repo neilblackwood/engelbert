@@ -127,7 +127,8 @@ function catalogue() {
         $tdesc	=	get_queried_object()->description;
         $cat_url	=	get_bloginfo('siteurl').'/kategori/'.$slug;
 		if($term_slug){
-            if($term_id==5||$term_id==7){
+		    // For specific layouts depending on the parent or the term, change parameters here.
+            if($term_id==5||$term_parent==3){
                 $args = array();
             } else {
                 $args = array(
