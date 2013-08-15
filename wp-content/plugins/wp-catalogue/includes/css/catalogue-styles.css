@@ -280,6 +280,9 @@
 div.entry-content {
     margin-bottom: 11px;
 }
+.home div.entry-content {
+    margin-bottom:0;
+}
 #wpc-products div.category {
     margin-bottom: 11px;
     margin-top: 52px;

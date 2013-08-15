@@ -27,11 +27,11 @@
         at caroufredsel.dev7studios.com
     */
     $("#carousel").carouFredSel({
-        width: 960,
+        width: 940,
         height: 600,
         items: {
             visible: 1,
-            width: 960,
+            width: 940,
             height: 600
         },
         scroll: {

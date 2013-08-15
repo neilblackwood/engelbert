@@ -179,13 +179,6 @@ function showForm( $params = '' )
 			<div>
 			    <input type="submit" name="submit'.$n.'" id="contactsubmit'.$n.'" class="cuf_submit" '.$title.'  onclick="return checkForm(\''.$n.'\');" />
 			</div>
-            <div class="terms">
-                <p>
-                    Terms & Conditions<br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra fringilla congue. Pellentesque pulvinar <br />
-                    vulputate venenatis. Aliquam non tellus ac tellus molestie tempus. Aenean vulputate scelerisque magna,
-                </p>
-            </div>
 			</div>
 			<div style="clear:both;"></div>
 			</form>';
@@ -661,17 +654,20 @@ div.terms p {
     letter-spacing: normal;
     width: 500px;
 }
-#tinyform div {
+#tinyform div, .wpcf7-form div, div.terms {
     clear:both;
 }
-#cuf_newsletter {
+input#cuf_newsletter, #cuf_newsletter input {
     width: 12px;
     margin: 5px 10px 32px 0;
 }
-label.cuf_newsletter {
+label.cuf_newsletter, #cuf_newsletter .wpcf7-list-item-label {
     width: auto;
     position: absolute;
     margin-top: 6px;
+}
+#cuf_newsletter .wpcf7-list-item-label {
+    width: 370px;
 }
 .cuf_textarea {
 	background:#fff;

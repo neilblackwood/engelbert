@@ -48,6 +48,7 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
 
 			.list_carousel {
 				width: 940px;
+				height:600px;
 				text-align: center;
 			}
 			.list_carousel ul {

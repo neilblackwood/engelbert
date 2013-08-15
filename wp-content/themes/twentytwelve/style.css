@@ -977,6 +977,9 @@ article.sticky .featured-post {
 	line-height: 1.6;
 	font-weight:normal;
 }
+.entry-content #aboutContent h2 {
+    margin:1.714285714rem 0 0 0;
+}
 .entry-content h3,
 .comment-content h3 {
     font-size: 20px;
@@ -1010,6 +1013,9 @@ article.sticky .featured-post {
 	margin: 24px 0 24px;
 	margin: 0.714285714rem 0 0.714285714rem;
 	line-height: 1.714285714;
+}
+.entry-content #aboutContent p {
+	margin: 0 0 0.714285714rem;
 }
 #wpc-col-2 .entry-content p {
 	font-size: 13px;
