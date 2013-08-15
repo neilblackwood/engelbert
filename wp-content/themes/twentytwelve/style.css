@@ -846,12 +846,12 @@ section[role="banner"] {
 .widget_bogo_language_switcher {
     border-left: 1px solid #b2b2b2;
     height: 12px;
+    margin-left: 13px !important;
 }
 #searchsubmit {
     border: none;
     width: 50px;
     padding: 0;
-    margin-right: 13px;
     background: none;
     text-align: left;
 }
@@ -1110,7 +1110,7 @@ article.sticky .featured-post {
 }
 #leftCol {
     width:190px;
-    padding-right:47px;
+    padding-right:45px;
     float:left;
 }
 #contactUs{
@@ -1168,7 +1168,7 @@ article.sticky .featured-post {
 }
 #aboutImages {
     width: 361px;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 #aboutImages img {
     margin-bottom: 55px;
