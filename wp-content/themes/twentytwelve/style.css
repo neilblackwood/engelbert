@@ -1865,3 +1865,122 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+
+/* Contact Us Form */
+.cuf_input {
+    display:none !important; visibility:hidden !important;
+}
+#contactsubmit:hover, #contactsubmit:focus {
+	text-decoration: none;
+}
+#thanks {
+    height:780px;
+}
+#thanks h2, #thanks p {
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
+}
+#contactsubmit:active {background: #849F00}
+#contactsubmit {
+	color: #FFF;
+	background: #000 repeat-x;
+	display: block;
+	float: left;
+	height: 28px;
+	padding-right: 11px;
+	padding-left: 11px;
+	margin-bottom: 28px;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1px;
+	font-weight: bold;
+	-webkit-transition: background 300ms linear;
+    -moz-transition: background 300ms linear;
+    -o-transition: background 300ms linear;
+    transition: background 300ms linear;
+    text-align:center
+}
+.cuf_label {
+    width:100px;
+    float:left;
+    margin-top:8px;
+}
+.cuf_field {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#fff;
+	border:1px solid #cccccc;
+	padding:5px 8px;
+	width: 200px;
+	margin-top:2px;
+    margin-bottom:15px;
+	outline:none
+	float:left;
+}
+label.cuf_subject, label.cuf_msg {
+    width:100%;
+}
+label.cuf_subject {
+    margin-top:18px;
+}
+#cuf_subject {
+    width:238px;
+    margin-right:100px;
+    margin-top:9px;
+}
+#cuf_title {
+    width: 138px;
+}
+#cuf_title, #cuf_subject {
+    height: 24px;
+}
+#tinyform, .wpcf7-form {
+clear: both;
+	width:350px;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:30px;*/
+	padding:20px 0;
+	-webkit-transition:all 200ms linear;
+	-moz-transition:all 200ms linear;
+	-o-transition:all 200ms linear;
+	transition:all 200ms linear;
+}
+.required-label, div.terms p {
+    color: #888;
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+div.terms p {
+    letter-spacing: normal;
+    width: 500px;
+}
+#tinyform div, .wpcf7-form div, div.terms, #openerWrapper {
+    clear:both;
+}
+input#cuf_newsletter, #cuf_newsletter input {
+    width: 12px;
+    margin: 5px 10px 32px 0;
+}
+label.cuf_newsletter, #cuf_newsletter .wpcf7-list-item-label {
+    width: auto;
+    position: absolute;
+    margin-top: 6px;
+}
+#cuf_newsletter .wpcf7-list-item-label {
+    width: 370px;
+}
+.cuf_textarea {
+	background:#fff;
+	border:1px solid #cccccc;
+	padding:8px;
+	width:300px;
+	margin-top:5px;
+	outline:none;
+margin-bottom:6px;
+}
