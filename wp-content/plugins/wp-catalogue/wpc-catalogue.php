@@ -322,8 +322,8 @@ function catalogue() {
                             if($j == 0){
                                 $class=" first-cat";
                             }
-                            $return_string .= '<div class="entry-content category'.$class.'">
-                                <h3 id="'.$subTerm->slug.'">'.$subTerm->name.'</h3>
+                            $return_string .= '<div id="'.$subTerm->slug.'" class="entry-content category'.$class.'">
+                                <h3>'.$subTerm->name.'</h3>
                                 </div>
                                 <div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
                                 </div>
@@ -385,7 +385,7 @@ function your_custom_menu_item ( $items, $args ) {
         );
         $categories = get_terms('wpccategories',$args1);
 
-        $categories_menu = '<li><a href="#" onclick="return false;">Produkter</a><ul>';
+        $categories_menu = '<li class="first"><a href="#" onclick="return false;">Produkter</a><ul>';
         foreach($categories as $category){
             //Limit to the top categories
             if($category->parent == 0){
