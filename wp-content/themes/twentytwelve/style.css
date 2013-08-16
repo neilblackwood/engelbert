@@ -1127,7 +1127,7 @@ article.sticky .featured-post {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-#leftCol p, #leftCol address {
+#leftCol p, #leftCol address a {
     color:#1f1f1f;
 }
 #storeTabsWrapper {
@@ -1167,6 +1167,21 @@ article.sticky .featured-post {
 }
 #storeTabs li.first a {
     padding-left: 0;
+}
+#storeTabs table p, #storeTabs table a {
+    color:#6a6a6a;
+}
+#leftCol address a, #storeTabs table a {
+    text-decoration: none;
+    display:block;
+    zoom:1;
+}
+#storeTabs table a:hover {
+    text-decoration: none;
+    color: black;
+}
+#storeTabs table strong {
+    color:#1f1f1f;
 }
 #aboutContent {
     float:left;
