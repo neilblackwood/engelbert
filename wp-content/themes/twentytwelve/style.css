@@ -1182,6 +1182,12 @@ article.sticky .featured-post {
 }
 #storeTabs table strong {
     color:#1f1f1f;
+    margin-bottom: 2px;
+    display: block;
+}
+#storeTabs table td {
+  display: table-cell;
+  vertical-align: top;
 }
 #aboutContent {
     float:left;

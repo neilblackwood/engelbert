@@ -19,6 +19,7 @@
 		    foreach($terms as $term ){
                 if($parent==$term->parent) {
                     foreach($terms as $parentTerm){
+                        // Only if the parent is Everyday Jewelry then take back to parent category.
                         if($term->parent==$parentTerm->term_id&&$parentTerm->parent==3){
                             $cat_url = get_term_link($parentTerm->slug, 'wpccategories') . '#' . $slug;
                         }
