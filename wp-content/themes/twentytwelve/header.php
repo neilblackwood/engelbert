@@ -103,9 +103,33 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
 ?>
     <script>
     $(function() {
-    $( "#tabs, #storeTabs" ).tabs();
-    });
+        $( "#dialog" ).dialog({
+            height: 940,
+            width: 940,
+            top: 0,
+            autoOpen: false,
+            show: {
+                duration: 250
+            },
+            hide: {
+                duration: 125
+            },
+            position: 'top'
+        });
 
+        $( "#opener, .opener" ).click(function() {
+            $('.product-img-view img').each(function() {
+                if($(this).css('display')=='inline'){
+                    //Create the popup
+                    $( "#dialog" ).html("<img width='940' height='940' src='"+$(this).attr('src')+"' />");
+                };
+            });
+          $( "#dialog" ).dialog( "open" );
+        });
+    });
+    </script>
+<?php  } else { ?>
+<script>
     $(function() {
         $( "#dialog" ).dialog({
             height: 940,
@@ -122,18 +146,11 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
         });
 
         $( "#opener" ).click(function() {
-            $('.product-img-view img').each(function() {
-                if($(this).css('display')=='inline'){
-                    //Create the popup
-                    $( "#dialog" ).html("<img width='940' height='940' src='"+$(this).attr('src')+"' />");
-                };
-            });
           $( "#dialog" ).dialog( "open" );
         });
     });
     </script>
-<?php  } ?>
-
+<?php } ?>
 </head>
 
 <body <?php body_class(); ?>>

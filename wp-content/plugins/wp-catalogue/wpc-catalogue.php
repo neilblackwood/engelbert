@@ -323,7 +323,7 @@ function catalogue() {
                                 $class=" first-cat";
                             }
                             $return_string .= '<div class="entry-content category'.$class.'">
-                                <h3>'.$subTerm->name.'</h3>
+                                <h3 id="'.$subTerm->slug.'">'.$subTerm->name.'</h3>
                                 </div>
                                 <div style="width:20px;border-bottom:1px solid black; margin:0 auto;">
                                 </div>

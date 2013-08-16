@@ -3,15 +3,30 @@
 <?php echo get_option('inn_temp_head'); ?>	
 		<?php 
 		$catalogue_page_url	=	get_option('catalogue_page_url');
-	 $terms	=	get_terms('wpccategories');
+	    $terms	=	get_terms('wpccategories');
 		global $post;
 		$terms1 = get_the_terms($post->id, 'wpccategories');
 		if($terms1){
 		foreach( $terms1 as $term1 ){
 			$slug	= $term1->slug;
+			$parent = $term1->parent;
 			$tname	=	$term1->name;
 			$cat_url	=	get_bloginfo('siteurl').'/kategori/'.$slug;
 		};
+
+		//Horrible way of looping to get the parent category we want, but works.
+		if($terms){
+		    foreach($terms as $term ){
+                if($parent==$term->parent) {
+                    foreach($terms as $parentTerm){
+                        if($term->parent==$parentTerm->term_id&&$parentTerm->parent==3){
+                            $cat_url = get_term_link($parentTerm->slug, 'wpccategories') . '#' . $slug;
+                        }
+                    }
+                }
+
+             }
+        }
 	}
 
 		if(is_single()){
@@ -87,9 +102,9 @@
 		?>
         
         <div class="product-img-view vignette" style="width:<?php echo $img_width; ?>px; height:<?php echo $img_height; ?>px;">
-        <img class="vignette" src="<?php echo $img1; ?>" alt="" id="img1" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" />
-        <img class="vignette" src="<?php echo $img2; ?>" alt="" id="img2" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;" />
-        <img class="vignette" src="<?php echo $img3; ?>" alt="" id="img3" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;"  />
+        <a href="#" class="opener"><img class="vignette" src="<?php echo $img1; ?>" alt="" id="img1" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" /></a>
+        <a href="#" class="opener"><img class="vignette" src="<?php echo $img2; ?>" alt="" id="img2" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;" /></a>
+        <a href="#" class="opener"><img class="vignette" src="<?php echo $img3; ?>" alt="" id="img3" height="<?php echo $img_height; ?>" width="<?php echo($icroping == 'image_scale_crop')? '' : $img_width; ?>" style="display:none;"  /></a>
         </div>
         <div class="clear"></div>
         <h5><a href="#" id="opener">View Image in Full Size</a></h5>

@@ -248,6 +248,10 @@
 #wpc-product-gallery a {
     text-decoration: none;
 }
+.product-img-view a{
+    display:block;
+    zoom: 1;
+}
 #wpc-product .post {
     float:right;
     width:300px;

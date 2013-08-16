@@ -654,7 +654,7 @@ div.terms p {
     letter-spacing: normal;
     width: 500px;
 }
-#tinyform div, .wpcf7-form div, div.terms {
+#tinyform div, .wpcf7-form div, div.terms, #openerWrapper {
     clear:both;
 }
 input#cuf_newsletter, #cuf_newsletter input {
