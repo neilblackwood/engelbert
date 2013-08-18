@@ -1,0 +1,18 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wpc\n"
+"POT-Creation-Date: 2013-08-18 12:39-0000\n"
+"PO-Revision-Date: 2013-08-18 12:40-0000\n"
+"Last-Translator: Neil Blackwood <neil@creativeinkpot.co.uk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"Language: Swedish\n"
+
+#: wp-catalogue/themefiles/single-wpcproduct.php.php:4
+msgid "Price on request"
+msgstr ""

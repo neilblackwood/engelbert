@@ -145,7 +145,7 @@
 		}
 		?>
         </div>
-        <h5><span class="product-price"><?php if($product_price): ?>Price: <span><?php echo $product_price; ?></span><?php else: ?>Pris ges på efterfrågan<?php endif; ?></span></h5>
+        <h5><span class="product-price"><?php if($product_price): ?>Price: <span><?php echo $product_price; ?></span><?php else: ?><?php _e("Price on request", "wp-catalogue"); ?><?php endif; ?></span></h5>
         <div class="wpc-product-img">
         <?php if($img1 && $img2): ?>
         <div class="new-prdct-img"><img src="<?php echo $img1; ?>" alt="" width="67" height="67" id="img1" /></div>

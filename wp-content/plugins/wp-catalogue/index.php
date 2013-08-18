@@ -25,6 +25,10 @@ define( 'WP_CATALOGUE_PRODUCTS', WP_CATALOGUE.'products'  );
 define( 'WP_CATALOGUE_INCLUDES', WP_CATALOGUE.'includes'  );
 define( 'WP_CATALOGUE_CSS', WP_CATALOGUE_INCLUDES.'/css'  );
 define( 'WP_CATALOGUE_JS', WP_CATALOGUE_INCLUDES.'/js'  );
+define( 'WP_CATALOGUE_LANG', WP_CATALOGUE.'/languages'  );
+
+// add translations
+load_plugin_textdomain( 'wp-catalogue', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 // adding scripts and styles to amdin
 add_action('admin_enqueue_scripts', 'wp_catalogue_scripts_method');
