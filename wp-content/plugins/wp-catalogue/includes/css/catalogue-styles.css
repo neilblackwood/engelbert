@@ -1,6 +1,7 @@
 #wpc-catalogue-wrapper {
     margin: 38px 0 0;
     margin: 2.715rem 0 0;
+    width: 100%;
 }
 #wpc-catalogue-wrapper h5 {
     font-size: 9px;
@@ -53,6 +54,10 @@
 	float:left;
 	margin: 0 50px 0 0;
 	line-height: inherit;
+}
+#wpc-catalogue-wrapper .isFixed .fixer {
+    top: 76px;
+    width: 161px;
 }
 #wpc-col-1 ul {
 	margin:0;
@@ -107,9 +112,8 @@
 }
 #wpc-col-2 {
 	/*width: 712px;*/
-
 	width: 724px;
-	float:left;
+	float:right;
 }
 .wpc-product, .wpc-subcategory {
 	float: left;
@@ -225,7 +229,7 @@
 .product-img-view {
 	float:left;
 	border: 0;
-	margin:0 14px 0 0;
+	margin:0 5px 0 0;
 	overflow: hidden;
 }
 .wpc-product-img {

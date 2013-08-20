@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpc\n"
 "POT-Creation-Date: 2013-08-18 12:39-0000\n"
-"PO-Revision-Date: 2013-08-18 12:48-0000\n"
+"PO-Revision-Date: 2013-08-18 13:15-0000\n"
 "Last-Translator: Neil Blackwood <neil@creativeinkpot.co.uk>\n"
 "Language-Team:  <neil@creativeinkpot.co.uk>\n"
 "MIME-Version: 1.0\n"
@@ -16,3 +16,48 @@ msgstr ""
 #: wp-catalogue/themefiles/single-wpcproduct.php.php:4
 msgid "Price on request"
 msgstr "Pris ges på efterfrågan"
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-fadenfattning"
+msgstr ""
+"Diamanterna sitter tätt i en rad nedsänkta i skenan och hålls fast av två "
+"eller fyra små kulor (körn). Stenarna omgärdas av en spegelkant som både "
+"ökar reflektionen och skyddar infattningen."
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-krabbfattning"
+msgstr ""
+"En klassisk infattning där diamanten hålls fast av fyra klor ( krabbor ). De "
+"blanka bågarna mellan krabborna är vinklade för maximal reflektion. Den "
+"bästa infattningen för större stenstorlekar."
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-kanalfattning"
+msgstr ""
+"Diamanterna sitter tätt i ett spår i ringskenan och knackas fast i kanterna. "
+"Detta ger en ren fattning utan klor. Den vanligaste infattningen för "
+"baguette- och princesslipade stenar men även vacker med briljanter där den "
+"ger en renare och mindre ”glittrig” känsla än t.ex. faden"
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-stavfattning"
+msgstr ""
+"Diamanterna hålls fast av tvärgående stavar i vilka de knackas fast. En ren "
+"och enkel infattning som ger lite mellanrum mellan stenarna. Då den har en "
+"ganska bred öppning i sidorna där stenen är fri ger det ett luftigt intryck "
+"men samtidigt är det en infattning som är relativt känslig för slag."
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-essfattning"
+msgstr ""
+"En mjukare variant av stavfattning där stavarna bildar for- men av svagt "
+"välvda ess. Stenarna är även mer skyddade än vid stavfattning."
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-pavefattning"
+msgstr ""
+"Diamanterna sätts så tätt som möjligt och hålls fast av små krön för att "
+"bilda en matta av diamanter. Uttrycket pavé kommer från gammalfranskans "
+"pavement som användes om de stenlagda golv, framför allt i katedraler, där "
+"stenarna bankades ned tätt för att ge ett slätt hårt golv. I treradig pavé "
+"sätts stenarna oftast förskjutet i tegelstensmönster."

@@ -349,6 +349,7 @@ li.bypostauthor cite span {
 	padding: 0;
 }
 
+
 /* Responsive images */
 .entry-content img,
 .comment-content img,
@@ -585,7 +586,7 @@ a:hover {
     margin: 0.5rem 0 0;
 }
 #main {
-    border-top: 1px solid #ccc;
+
 }
 .home #main, .home footer {
     border: none;
@@ -652,6 +653,52 @@ a:hover {
 	margin-top: 1.714285714rem;*/
 	text-align: center;
 }
+header.isFixed {
+    padding: 0;
+}
+.site-header .fixer {
+    position:relative;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+}
+.isFixed .fixer {
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+    width: 940px;
+}
+.isFixed #site-navigation {
+    position: relative;
+    z-index: 1;
+    float: left;
+}
+
+.isFixed h1 {
+    position: relative;
+    z-index: 2;
+    float: left;
+    background: #fff;
+    margin-top:0;
+    width: 161px;
+    text-align: left;
+    -webkit-transition: position ease 250ms;
+    -moz-transition: ease 250ms;
+    -o-transition: ease 250ms;
+    transition: ease 250ms;
+}
+.isFixed .widget-area {
+    display:none;
+}
+.isFixed h1 a {
+    height: 34px;
+    display: block;
+    overflow: hidden;
+}
+.isFixed h1 a img {
+    width: 130px;
+    padding-top: 11px;
+    height: auto;
+}
 .main-navigation li {
 	margin-top: 24px;
 	margin-top: 1.714285714rem;
@@ -661,6 +708,14 @@ a:hover {
 }
 .main-navigation li.first {
     padding-left: 3%;
+}
+.isFixed .main-navigation li {
+    height: 40px;
+    padding-top: 3px;
+}
+.isFixed .main-navigation li ul li {
+    height: auto;
+    padding-top: 0;
 }
 .main-navigation a {
 	color: #5e5e5e;
@@ -1188,6 +1243,7 @@ article.sticky .featured-post {
 #storeTabs table td {
   display: table-cell;
   vertical-align: top;
+  width: 25%;
 }
 #aboutContent {
     float:left;

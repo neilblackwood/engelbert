@@ -64,7 +64,7 @@ function catalogue() {
 		
 		$return_string = '<div id="wpc-catalogue-wrapper">';
 		//$return_string .= '<div class="wp-catalogue-breadcrumb"> <a href="'.$catalogue_page_url.'">All Products</a> &gt;&gt; <a href="'.$cat_url.'">'.$tname.'</a>  ' . $pname . '</div>';
-		$return_string .= '<div id="wpc-col-1">';
+		$return_string .= '<div id="wpc-col-1" class="fixed-left"><div class="fixer">';
         $return_string .= '<ul class="wpc-categories">';
 
 		// generating sidebar
@@ -113,7 +113,7 @@ function catalogue() {
 		}
 		
 		$return_string .= '</ul>';
-        $return_string .=' </div>';
+        $return_string .=' </div></div>';
 
 		// products area
 		$per_page	=	get_option('pagination');
@@ -289,7 +289,11 @@ function catalogue() {
                         if(get_option('tcroping') == 'thumb_scale_fit') { $return_string .= $twidth; };
                         $return_string .= '" /></a></div>';
                         $return_string .= '<p class="wpc-cat-title"><a href="'. get_term_link($subTerm->slug, 'wpccategories') .'">' . $subTerm->name . '</a></p>';
-                        $return_string .= '<p class="wpc-desc">' . $subTerm->description . '</p>';
+                        if(get_locale()=="en_US"){
+                            $return_string .= '<p class="wpc-desc">' . __($subTerm->slug, "wp-catalogue") . '</p>';
+                        } else {
+                            $return_string .= '<p class="wpc-desc">' . $subTerm->description . '</p>';
+                        }
                         $return_string .= '</div>';
                         $return_string .= '<!--/wpc-category-->';
                         $i++;

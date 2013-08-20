@@ -16,3 +16,27 @@ msgstr ""
 #: wp-catalogue/themefiles/single-wpcproduct.php.php:4
 msgid "Price on request"
 msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-fadenfattning"
+msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-krabbfattning"
+msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-kanalfattning"
+msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-stavfattning"
+msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-essfattning"
+msgstr ""
+
+#: wp-catalogue/wpc-catalogue.php.php:293
+msgid "allians-pavefattning"
+msgstr ""
