@@ -17,6 +17,14 @@ msgstr ""
 msgid "Price on request"
 msgstr ""
 
+#: wp-catalogue/themefiles/single-wpcproduct.php.php125
+msgid "Description"
+msgstr ""
+
+#: wp-catalogue/themefiles/single-wpcproduct.php.php126
+msgid "Details"
+msgstr ""
+
 #: wp-catalogue/wpc-catalogue.php.php:293
 msgid "allians-fadenfattning"
 msgstr ""

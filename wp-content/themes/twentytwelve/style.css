@@ -671,6 +671,7 @@ header.isFixed {
     position: relative;
     z-index: 1;
     float: left;
+    width:724px;
 }
 
 .isFixed h1 {
@@ -678,13 +679,13 @@ header.isFixed {
     z-index: 2;
     float: left;
     background: #fff;
-    margin-top:0;
+    margin:0;
     width: 161px;
     text-align: left;
-    -webkit-transition: position ease 250ms;
-    -moz-transition: ease 250ms;
-    -o-transition: ease 250ms;
-    transition: ease 250ms;
+    -webkit-transition: width ease 200ms;
+    -moz-transition: width ease 200ms;
+    -o-transition: width ease 200ms;
+    transition: width ease 200ms;
 }
 .isFixed .widget-area {
     display:none;

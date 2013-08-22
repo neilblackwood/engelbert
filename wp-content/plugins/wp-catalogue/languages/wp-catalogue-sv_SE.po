@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wpc\n"
 "POT-Creation-Date: 2013-08-18 12:39-0000\n"
-"PO-Revision-Date: 2013-08-18 13:15-0000\n"
+"PO-Revision-Date: 2013-08-22 19:48-0000\n"
 "Last-Translator: Neil Blackwood <neil@creativeinkpot.co.uk>\n"
 "Language-Team:  <neil@creativeinkpot.co.uk>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,15 @@ msgstr ""
 
 #: wp-catalogue/themefiles/single-wpcproduct.php.php:4
 msgid "Price on request"
-msgstr "Pris ges på efterfrågan"
+msgstr "Pris ges på förfrågan"
+
+#: wp-catalogue/themefiles/single-wpcproduct.php.php125
+msgid "Description"
+msgstr "Beskrivning"
+
+#: wp-catalogue/themefiles/single-wpcproduct.php.php126
+msgid "Details"
+msgstr "Detaljer"
 
 #: wp-catalogue/wpc-catalogue.php.php:293
 msgid "allians-fadenfattning"

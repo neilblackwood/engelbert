@@ -223,6 +223,10 @@ body.full-width .site-content {
     background: url(images/search-icon-small.png) no-repeat 2px 4px;
 }
 
+.site-header {
+	margin: 12px 0 0;
+}
+
 header.isFixed {
     padding: 0;
 }
@@ -237,23 +241,14 @@ header.isFixed {
     z-index: 3000;
     width: 940px;
 }
-.isFixed #site-navigation {
-    position: relative;
-    z-index: 1;
-    float: left;
-}
-
 .isFixed h1 {
     position: relative;
     z-index: 2;
     float: left;
     background: #fff;
-    margin-top:0;
+    margin:0;
     width: 161px;
     text-align: left;
-}
-.isFixed .widget-area {
-    display:none;
 }
 .isFixed h1 a {
     height: 34px;

@@ -267,12 +267,12 @@ function catalogue() {
             if($term_id==5){
 
             $imgArray = array(
-                'allians-fadenfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Faden-5205-50F.jpg',
-                'allians-krabbfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Krab-9105-120E.jpg',
-                'allians-kanalfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Kanal-5705-55F.jpg',
-                'allians-stavfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/23-9305-35N.jpg',
-                'allians-essfattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Essfa-9303-27E.jpg',
-                'allians-pavefattning' => 'http://engelbert.26.vildmarksdata.net/wp-content/uploads/2013/08/Pave-3535-70HR.jpg'
+                'allians-fadenfattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/Faden-5205-50F.jpg',
+                'allians-krabbfattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/Krab-9105-120E.jpg',
+                'allians-kanalfattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/Kanal-5705-55F.jpg',
+                'allians-stavfattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/23-9305-35N.jpg',
+                'allians-essfattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/Essfa-9303-27E.jpg',
+                'allians-pavefattning' => 'http://www.engelbertstockholm.com/wp-content/uploads/2013/08/Pave-3535-70HR.jpg'
             );
 
                 $i = 0; // reset counter

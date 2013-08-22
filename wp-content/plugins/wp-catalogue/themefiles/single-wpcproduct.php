@@ -122,8 +122,8 @@
         </div>
         <div id="tabs">
           <ul>
-            <li><a href="#description">Description</a></li>
-            <li><a href="#details">Details</a></li>
+            <li><a href="#description"><?php _e("Description", "wp-catalogue"); ?></a></li>
+            <li><a href="#details"><?php _e("Details", "wp-catalogue"); ?></a></li>
           </ul>
           <div id="description">
             <p><?php echo $product_description; ?></p>

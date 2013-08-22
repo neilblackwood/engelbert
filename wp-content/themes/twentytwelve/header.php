@@ -75,7 +75,7 @@ src:url("<?php echo get_template_directory_uri(); ?>/Fonts/706787/640e04bf-5082-
                 position: relative;
                 margin: 0 auto;
                 z-index: 3;
-                top: -30px;
+                top: -46px;
             }
             .pager a {
                 background: url('<?php echo get_template_directory_uri(); ?>/css/images/carousel_sprite.png') 0 -1px no-repeat transparent;
